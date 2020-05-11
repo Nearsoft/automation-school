@@ -4,18 +4,18 @@ Training program for QA Automation using Java with Selenium
 (TODO Introduction of the course and targeted audience) 
 
 ## Java Chapters
-1. The History and Evolution of Java
-2. An Overview of Java
-3. Data Types, Variables, and Arrays
-4. Operators
-5. Control Statements
-6. Git Version control
-7. Classes
-8. A Closer Look at Methods and Classes
-9. Inheritance
-10. Packages and Interfaces
-11. Exception Handling
-12. Design Patterns
+1. [The History and Evolution of Java](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-01)
+2. [An Overview of Java](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-02)
+3. [Data Types, Variables, and Arrays](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-03)
+4. [Operators](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-04)
+5. [Control Statements](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-05)
+6. [Git Version control](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-06)
+7. [Classes](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-07)
+8. [A Closer Look at Methods and Classes](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-08)
+9. [Inheritance](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-09)
+10. [Packages and Interfaces](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-10)
+11. [Exception Handling](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-11)
+12. [Design Patterns](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-12)
 
 ## Automation Chapters
 Work in progress...
