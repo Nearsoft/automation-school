@@ -32,11 +32,11 @@ if (condition)  {
 }
 ```
 
-Flavors of if statements.
+Multiple flavors of if statements can be used.
 
 1. if.
 2. if-else.
-3. if-else if-else.
+3. if-else-if-else.
 
 ![if-flavors.png](images/if-flavors.png)
 
