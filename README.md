@@ -4,17 +4,18 @@ Training program for QA Automation using Java with Selenium
 (TODO Introduction of the course and targeted audience) 
 
 ## Java Chapters
-1. An OVerview of Java
-2. Data Types, Variables, and Arrays
-3. Operators
-4. Control Statements
-5. Git Version control
-6. Classes
-7. A Closer Look at Methods and Classes
-8. Inheritance
-9. Packages and Interfaces
-10. Exception Handling
-11. Design Patterns
+1. The History and Evolution of Java
+2. An Overview of Java
+3. Data Types, Variables, and Arrays
+4. Operators
+5. Control Statements
+6. Git Version control
+7. Classes
+8. A Closer Look at Methods and Classes
+9. Inheritance
+10. Packages and Interfaces
+11. Exception Handling
+12. Design Patterns
 
 ## Automation Chapters
 Work in progress...
