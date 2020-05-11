@@ -45,4 +45,6 @@ Write a java program that reads an age variable and prints the following:
   1. If age is less or equal 17 prints child.
   2. If age is greater than 17 prints adult, but...
   3. If age is 80 or more prints elder.
+  
+  ![if-flavors-example.png](images/if-flavors-example.png)
 
