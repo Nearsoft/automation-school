@@ -2,4 +2,4 @@
 
 If you want to embed images, this is how you do it:
 
-![images/control-statement-hierarchy.png]
+![control-statement-hierarchy.png](images/control-statement-hierarchy.png)
