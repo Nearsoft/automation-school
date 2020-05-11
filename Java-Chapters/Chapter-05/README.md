@@ -31,3 +31,8 @@ if (condition)  {
   statementN;
 }
 ```
+
+Flavors of if statements.
+
+![if-flavors.png](images/if-flavors.png)
+
