@@ -34,5 +34,9 @@ if (condition)  {
 
 Flavors of if statements.
 
+1. if.
+2. if-else.
+3. if-else if-else.
+
 ![if-flavors.png](images/if-flavors.png)
 
