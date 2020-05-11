@@ -65,6 +65,8 @@ if(i == 10) {
 }
 else a = d; 
 ```
+Organized:
+
 ```java
 if(i == 10) {
    if(j < 20) {
