@@ -41,10 +41,50 @@ Multiple flavors of if statements can be used.
 ![if-flavors.png](images/if-flavors.png)
 
 Example:
+
 Write a java program that reads an age variable and prints the following:
   1. If age is less or equal 17 prints child.
   2. If age is greater than 17 prints adult, but...
   3. If age is 80 or more prints elder.
   
   ![if-flavors-example.png](images/if-flavors-example.png)
+  
+Nested ifs
+
+A nested if is an if statement that is the target of another if or else. Nested ifs are very
+common in programming. When you nest ifs, the main thing to remember is that an else
+statement always refers to the nearest if statement that is within the same block as the else
+and that is not already associated with an else.
+
+Example:
+```java
+if(i == 10) {
+   if(j < 20) a = b;
+   if(k > 100) c = d;
+   else a = c; 
+}
+else a = d; 
+```
+```java
+if(i == 10) {
+   if(j < 20) {
+       a = b;
+   }
+   if(k > 100) { // this if is
+       c = d;
+   }else { // associated with this else
+       a = c;
+   }
+}
+else { // this else refers to if(i == 10)
+   a = d;
+}
+```
+
+The final else is not associated with if(j<20) because it is not in
+the same block (even though it is the nearest if without an else). Rather, the final else is
+associated with if(i==10). The inner else refers to if(k>100) because it is the closest if within
+the same block.
+
+
 
