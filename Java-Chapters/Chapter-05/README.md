@@ -94,9 +94,12 @@ You can use a switch statement to compare the value of a variable with multiple 
 
 ![switch-diagram.png](images/switch-diagram.png)
 
-Expression must be of type byte, short, int, char, enumeration or String. 
+Expression must be of type byte, short, int, char, enumeration or String.
+
 Each value specified in the case statements must be a unique constant expression. Duplicate case values are not allowed. The type of each value must be compatible with the type of expression.
+
 The switch statement works like this: The value of the expression is compared with each of the values in the case statements. If a match is found, the code sequence following that case statement is executed. If none of the constants matches the value of the expression, then the default statement is executed. However, the default statement is optional. If no case matches and no default is present, then no further action is taken. 
+
 The break statement is used inside the switch to terminate a statement sequence. When a break statement is encountered, execution branches to the first line of code that follows the entire switch statement.
 
 
