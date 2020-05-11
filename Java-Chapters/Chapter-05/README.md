@@ -42,7 +42,7 @@ Multiple flavors of if statements can be used.
 
 Example:
 Write a java program that reads an age variable and prints the following:
-  a) If age is less or equal 17 prints child.
-  b) If age is greater than 17 prints adult, but...
-  c) If age is 80 or more prints elder.
+  1. If age is less or equal 17 prints child.
+  2. If age is greater than 17 prints adult, but...
+  3. If age is 80 or more prints elder.
 
