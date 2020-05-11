@@ -21,7 +21,7 @@ Selection Statements
 An if construct enables you to execute a set of statements in your code based on the result of a condition. This condition must always evaluate to a boolean or a Boolean value. You can specify a set of statements to execute when this condition evaluates to true or false.
 
 ![if1.png](images/if1.png)
-
+'''
 boolean condition = true;
 if (condition)  {
   statement1; // code to be executed if the condition is true
@@ -30,5 +30,4 @@ if (condition)  {
   statement2; // code to be executed if the condition is not true
   statementN;
 }
-
-        }
+'''
