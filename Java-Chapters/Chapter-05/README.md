@@ -13,3 +13,11 @@ can be put into the following categories: selection, iteration, and jump.
 Jump statements: Allow your program to execute in a nonlinear fashion.
 
 ![control-statement-hierarchy.png](images/control-statement-hierarchy.png)
+
+Selection Statements
+
+1. If
+
+An if construct enables you to execute a set of statements in your code based on the result of a condition. This condition must always evaluate to a boolean or a Boolean value. You can specify a set of statements to execute when this condition evaluates to true or false.
+
+![if1.png](images/if1.png)
