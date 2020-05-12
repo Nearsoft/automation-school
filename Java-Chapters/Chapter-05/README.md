@@ -148,5 +148,16 @@ while(condition) {
 
 The condition can be any Boolean expression. The body of the loop will be executed as long as the conditional expression is true. When condition becomes false, control passes to the next line of code immediately following the loop. The curly braces are unnecessary if only a single statement is being repeated.
 
+Example:
+
+Write a java program that simulates a counter for a bomb it has to start the countdown in 5 and print countdown as follows:
+
+thick 5
+thick 4
+thick 3
+thick 2
+thick 1
+
+
 
 
