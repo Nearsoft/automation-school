@@ -18,6 +18,9 @@ Selection Statements
 An if statement enables you to execute a set of statements in your code based on the result of a condition. This condition must always evaluate to a boolean or a Boolean value. 
 
 ![if1.png](images/if1.png) 
+
+A common if statement looks like the following code:
+
 ```java
 boolean condition = true;
 if (condition)  {
@@ -98,6 +101,25 @@ The final else is not associated with if(j<20) because it is not in the same blo
 You can use a switch statement to compare the value of a variable with multiple values. For each of these values, you can define a set of statements to execute. 
 
 ![switch-diagram.png](images/switch-diagram.png)
+
+A common switch statement looks like the following code:
+
+```java
+switch (expression) {
+  case value1:
+    // statement sequence
+  break;
+  case value2:
+ 	  // statement sequence
+  break;
+    ...
+  case valueN:
+    // statement sequence
+  break;
+  default:
+    // default statement sequence
+}
+```
 
 Expression must be of type byte, short, int, char, enumeration, String or equivalent wrappers.
 
