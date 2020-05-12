@@ -398,6 +398,13 @@ for(int num1=0, num2=2; num1 < 4; num1++, num2 = num2 + 2, System.out.println(" 
    System.out.print(" value of num2: "+num2);	//statement2
 }
 ```
+```
+Console:
+  value of num1: 0 value of num2: 2 end of iteration
+  value of num1: 1 value of num2: 4 end of iteration
+  value of num1: 2 value of num2: 6 end of iteration
+  value of num1: 3 value of num2: 8 end of iteration
+```
 
 Example 3:
 
@@ -418,7 +425,15 @@ for (int position = 0; position < array.length; position++){
 }
 System.out.println("sum: "+sum);						//statement3
 ```
-
+```
+Console:
+  position: 0 value: 6
+  position: 1 value: 8
+  position: 2 value: 9
+  position: 3 value: 1
+  sum: 24
+  ```
+  
 4. for each.
 
 A for-each style loop is designed to cycle through a collection of objects, such as an array, in strictly sequential fashion, from start to finish.
@@ -510,6 +525,8 @@ Using break to Exit a Loop.
 
 By using break, you can force immediate termination of a loop, bypassing the conditional expression and any remaining code in the body of the loop. When a break statement is encountered inside a loop, the loop is terminated and program control resumes at the next statement following the loop.
 
+A flow diagram of a break statement being executed:
+
 ![break-diagram.png](images/break-diagram.png)
 
 Example 1:
@@ -518,6 +535,8 @@ Having this array {6,8,9,1}, create a java program (using a for each sentence) t
 
 * Prints the value of each element.
 * If the number 8 is found in the array, the program stops printing values.
+
+Having the next code:
 
 ```java
 int[] array = {6, 8, 9, 1};
@@ -529,6 +548,7 @@ for(int value : array){
 }
 System.out.println("out of loop");
 ```
+Each iteration is described in the next image:
 
 ![break-example1.png](images/break-example1.png)
 
@@ -543,6 +563,8 @@ Using continue statement to exit the current iteration in a loop.
 
 The continue  statement  is  used  to  skip  the  remaining  steps  in  the  current  iteration and start with the next loop iteration. 
 
+A flow diagram of a continue statement being executed:
+
 ![continue-diagram.png](images/continue-diagram.png)
 
 Example:
@@ -551,6 +573,8 @@ Having this array {6,8,9}, create a java program (using a for each sentence) tha
 
 * Prints the value of each element.
 * If the number 8 is found in the array, the program skips printing that number.
+
+Having the next code:
 
 ```java
 int[] array = {6, 8, 9};
@@ -562,6 +586,8 @@ for(int value : array){
 }
 System.out.println("out of loop");
 ```
+
+Each iteration is described in the next image:
 
 ![continue-example1.png](images/continue-example1.png)
 
