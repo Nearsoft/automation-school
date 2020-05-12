@@ -17,6 +17,8 @@ Selection Statements
 
 An if statement enables you to execute a set of statements in your code based on the result of a condition. This condition must always evaluate to a boolean or a Boolean value. 
 
+Flow diagram of an if statement:
+
 ![if1.png](images/if1.png) 
 
 A common if statement looks like the following code:
