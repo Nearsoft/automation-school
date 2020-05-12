@@ -117,7 +117,7 @@ switch (day) {
    case "WED":
    case "THU":
    case "FRI":
-System.out.println("Time to work");
+        System.out.println("Time to work");
        break;
    case "SAT":
    case "SUN":
