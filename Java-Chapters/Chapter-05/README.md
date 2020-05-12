@@ -235,4 +235,61 @@ for(initialization; condition; iteration) {
 
 The for loop operates as follows. When the loop first starts, the initialization portion of the loop is executed. Generally, this is an expression that sets the value of the loop control variable, which acts as a counter that controls the loop. It is important to understand that the initialization expression is executed only once. Next, condition is evaluated. This must be a Boolean expression. It usually tests the loop control variable against a target value. If this expression is true, then the body of the loop is executed. If it is false, the loop terminates. Next, the iteration portion of the loop is executed. This is usually an expression that increments or decrements the loop control variable. The loop then iterates, first evaluating the conditional expression, then executing the body of the loop, and then executing the iteration expression with each pass. This process repeats until the controlling expression is false.
 
+Example 1:
+
+Write a java program that simulates a counter for a bomb it has to start the countdown in 5 and print countdown as follows:
+
+thick 5
+
+thick 4
+
+thick 3
+
+thick 2
+
+thick 1
+
+![for-example1.png](images/for-example1.png)
+
+```java
+for(int counter = 5; counter > 0; counter--) {
+   System.out.println("tick " + counter);
+}
+```
+
+Example 2:
+
+```java
+![for-example2.png](images/for-example2.png)
+
+for(int num1=0, num2=2; num1 < 4; num1++, num2 = num2 + 2, System.out.println(" end of iteration")){
+   System.out.print("value of num1: "+num1);	//statement1
+   System.out.print(" value of num2: "+num2);	//statement2
+}
+```
+
+Example 3:
+
+Having this array {6,8,9,1}, create a java program that:
+* Prints the position in the array and the value of each element.
+* Prints the sum of the elements in the array.
+
+![for-example3.png](images/for-example3.png)
+
+```java
+int sum = 0;
+int[] array = {6, 8, 9, 1};
+for (int position = 0; position < array.length; position++){
+   System.out.println("position: " + position +" value: "+ array[position]);	//statement1
+   sum = sum + array[position];						//statement2
+}
+System.out.println("sum: "+sum);						//statement3
+```
+
+
+
+
+
+
+
 
