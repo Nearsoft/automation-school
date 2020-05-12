@@ -173,6 +173,8 @@ thick 2
 
 thick 1
 
+Each iteration is shown in the following image:
+
 ![while-example1.png](images/while-example1.png)
 
 ```java
@@ -198,6 +200,8 @@ Example 2:
 
 Write a java program that finds the midpoint between 10 and 20.
 
+Each iteration is shown in the following image:
+
 ![while-example2.png](images/while-example2.png)
 
 ```java
@@ -213,7 +217,7 @@ Console:
 
 2. do while.
 
-As you just saw, if the conditional expression controlling a while loop is initially false, then the body of the loop will not be executed at all. However, sometimes it is desirable to execute the body of a loop at least once, even if the conditional expression is false to begin with. In other words, there are times when you would like to test the termination expression at the end of the loop rather than at the beginning. Fortunately, Java supplies a loop that does just that: the do-while. The do-while loop always executes its body at least once, because its conditional expression is at the bottom of the loop. Condition must be a Boolean expression.
+The do-while loop always executes its body at least once, because its conditional expression is at the bottom of the loop. The conditional must be a Boolean or boolean expression.
 
 ![do-while-diagram.png](images/do-while-diagram.png)
 
@@ -238,6 +242,8 @@ thick 2
 
 thick 1
 
+Each iteration is shown in the following image:
+
 ![do-while-example.png](images/do-while-example.png)
 
 ```java
@@ -246,6 +252,14 @@ do{
    System.out.println("tick " + counter);
    counter--;
 }while(counter > 0);
+```
+```
+Console: 
+  tick 5
+  tick 4
+  tick 3
+  tick 2
+  tick 1
 ```
 
 3. for.
@@ -261,7 +275,23 @@ for(initialization; condition; iteration) {
 
 ![for-diagram.png](images/for-diagram.png)
 
-The for loop operates as follows. When the loop first starts, the initialization portion of the loop is executed. Generally, this is an expression that sets the value of the loop control variable, which acts as a counter that controls the loop. It is important to understand that the initialization expression is executed only once. Next, condition is evaluated. This must be a Boolean expression. It usually tests the loop control variable against a target value. If this expression is true, then the body of the loop is executed. If it is false, the loop terminates. Next, the iteration portion of the loop is executed. This is usually an expression that increments or decrements the loop control variable. The loop then iterates, first evaluating the conditional expression, then executing the body of the loop, and then executing the iteration expression with each pass. This process repeats until the controlling expression is false.
+The for loop operates as follows:
+
+1. Initialization:
+* The initialization portion of the loop is executed, as soon as the loop starts. 
+* The initialization is an expression that sets the value of the loop control variable, which acts as a counter that controls the loop. 
+* Java can initialize multiple variables in this section, but all must be of the same type.
+* The initialization expression is executed only once. 
+2. Condition:
+* The condition is evaluated. This must be a Boolean or boolean expression. 
+* Tests the loop control variable against a target value. 
+* If this expression is true, then the body of the loop is executed. If it is false, the loop terminates. 
+3. Iteration:
+* This is usually an expression that increments or decrements the loop control variable. 
+* Java can execute statements in this section.
+
+
+The loop then iterates, first evaluating the conditional expression, then executing the body of the loop, and then executing the iteration expression with each pass. This process repeats until the controlling expression (condition) is false.
 
 Example 1:
 
@@ -277,6 +307,8 @@ thick 2
 
 thick 1
 
+Each iteration is shown in the following image:
+
 ![for-example1.png](images/for-example1.png)
 
 ```java
@@ -284,8 +316,18 @@ for(int counter = 5; counter > 0; counter--) {
    System.out.println("tick " + counter);
 }
 ```
+```
+Console: 
+  tick 5
+  tick 4
+  tick 3
+  tick 2
+  tick 1
+```
 
 Example 2:
+
+
 
 
 ![for-example2.png](images/for-example2.png)
