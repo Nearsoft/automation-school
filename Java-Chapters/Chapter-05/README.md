@@ -132,7 +132,7 @@ Iteration statements
 
 1. while
 
-The while loop is Java’s most fundamental loop statement. It repeats a statement or block while its controlling expression is true.
+The while loop is Java’s most fundamental loop statement. It repeats a statement or block while its controlling condition is true.
 
 ![while-diagram.png](images/while-diagram.png)
 
@@ -144,7 +144,7 @@ while(condition) {
 }
 ```
 
-The condition can be any Boolean expression. The body of the loop will be executed as long as the conditional expression is true. When condition becomes false, control passes to the next line of code immediately following the loop. The curly braces are unnecessary if only a single statement is being repeated.
+The condition can be any Boolean or boolean expression. The body of the loop will be executed as long as the conditional expression is true. When condition becomes false, control passes to the next line of code immediately following the loop. The curly braces are unnecessary if only a single statement is being repeated.
 
 Example 1:
 
