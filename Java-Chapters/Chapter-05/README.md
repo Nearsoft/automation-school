@@ -148,7 +148,7 @@ while(condition) {
 
 The condition can be any Boolean expression. The body of the loop will be executed as long as the conditional expression is true. When condition becomes false, control passes to the next line of code immediately following the loop. The curly braces are unnecessary if only a single statement is being repeated.
 
-Example:
+Example 1:
 
 Write a java program that simulates a counter for a bomb it has to start the countdown in 5 and print countdown as follows:
 
@@ -164,6 +164,27 @@ thick 1
 
 ![while-example1.png](images/while-example1.png)
 
+```java
+int counter = 5;
+while(counter > 0) {
+   System.out.println("tick " + counter);
+   counter--;
+}
+```
+
+
+Example 2:
+
+Write a java program that finds the midpoint between 10 and 20.
+
+![while-example2.png](images/while-example2.png)
+
+```java
+nt n1 = 10;
+int n2 = 20;
+while(++n1 < --n2);
+System.out.println("Midpoint is " + n1);
+```
 
 
 
