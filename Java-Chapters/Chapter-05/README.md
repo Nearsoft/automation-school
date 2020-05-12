@@ -385,7 +385,7 @@ Console:
 
 Example 2:
 
-This exampple demonstrates that the for statement is capable of declare multiple variables in the initialization section and to execute multiple statements in the iteration or update section.
+This example demonstrates that the for statement is capable of declaring multiple variables in the initialization section and executing multiple statements inside the iteration or update section.
 
 
 ![for-example2.png](images/for-example2.png)
