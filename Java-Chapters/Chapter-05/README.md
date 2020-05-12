@@ -101,3 +101,32 @@ The switch statement works like this: The value of the expression is compared wi
 
 The break statement is used inside the switch to terminate a statement sequence. When a break statement is encountered, execution branches to the first line of code that follows the entire switch statement. In the absence of the break statement, control will fall through the  remaining  code  and  execute  the  code  corresponding  to  all  the remaining  cases that follow that matching case.
 
+Example:
+
+Write a java program (using a switch statement) that reads a String day variable and prints the following:
+
+* If day is equal to  MON, TUE, WED, THU or FRI, prints time to work.
+* If day is equal to SAT or SUN, prints Weekend!.
+* If day takes another value, prints invalid day?
+
+```java
+String day = "SUN";
+switch (day) {
+   case "MON":
+   case "TUE":
+   case "WED":
+   case "THU":
+   case "FRI":
+System.out.println("Time to work");
+       break;
+   case "SAT":
+   case "SUN":
+       	System.out.println("Weekend!");
+       break;
+   default:
+       	System.out.println("Invalid day?");
+}
+```
+
+
+
