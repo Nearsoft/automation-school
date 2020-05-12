@@ -517,9 +517,9 @@ Jump Statements
 
 In Java, the break statement has three uses. 
 
-1. It terminates a statement sequence in a switch statement (We already see this use in the switch statement section). 
+1. It terminates a statement sequence in a switch statement (We already reviewed this use in the switch statement section). 
 2. It can be used to exit a loop. 
-3. It can be used as a form of goto using labeled statements(not explained in this document).
+3. It can be used as a form of goto using labeled statements (not explained in this document).
 
 Using break to Exit a Loop.
 
@@ -556,8 +556,8 @@ Each iteration is described in the next image:
 
 In Java, the continue statement has two uses. 
 
-2. It can be used to exit the current iteration in a loop. 
-3. It can be used as a form of goto using labeled statements(not explained in this document).
+1. It can be used to exit the current iteration in a loop. 
+2. It can be used as a form of goto using labeled statements (not explained in this document).
 
 Using continue statement to exit the current iteration in a loop. 
 
@@ -595,7 +595,7 @@ Each iteration is described in the next image:
 
 The return statement is used to explicitly return from a method. That is, it causes program control to transfer back to the caller of the method.
 
-Let's review the next code whitout the use of return:
+Let's review the next code without the use of return:
 
 ```java
 public class Main {
