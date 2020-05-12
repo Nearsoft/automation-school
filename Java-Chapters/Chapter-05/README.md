@@ -390,6 +390,17 @@ Having this array {6,8,9}, create a java program (using a for each sentence) tha
 * Prints the value of each element.
 * If the number 8 is found in the array, the program skips printing that number.
 
+```java
+int[] array = {6, 8, 9};
+for(int value : array){
+   if(value == 8){
+       continue;
+   }
+   System.out.println(value);
+}
+System.out.println("out of loop");
+```
+
 ![continue-example1.png](images/continue-example1.png)
 
 
