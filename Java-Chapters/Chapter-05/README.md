@@ -429,12 +429,12 @@ public class Main {
 It prints in console:
 
 ```
-Console when true: 
-   	before call
-    in condition
-    not returning
-    end of method and returning
-    after call
+Console: 
+  before call
+  in condition
+  not returning
+  end of method and returning
+  after call
 ```
 
 If we add a return statement into the if statement in the method methodToCall():
@@ -454,15 +454,16 @@ public class Main {
        System.out.println("not returning");
        System.out.println("end of method and returning");
    }
-}```
+}
+```
 
 Now it prints in console:
 
 ```
-Console when true: 
-   	before call
-    in condition and return
-    after call
+Console: 
+  before call
+  in condition and return
+  after call
 ```
     
 As we can see, when the condition is true, the execution of the method methodToCall() enters into the if and executes the return statement, this makes the execution flow to return to the caller method (the main method) and in this case System.out.println("not returning"); and System.out.println("end of method and returning"); statements are not executed.
