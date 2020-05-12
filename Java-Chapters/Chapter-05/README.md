@@ -18,9 +18,8 @@ Java uses control statements to cause the flow of execution to advance and branc
 An if statement enables you to execute a set of statements in your code based on the result of a condition. This condition must always evaluate to a boolean or a Boolean value. 
 
 Flow diagram of an if statement:
-<p align="center">
+
   ![if1.png](images/if1.png) 
-</p>
 
 A common if statement looks like the following code:
 
