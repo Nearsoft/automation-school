@@ -287,6 +287,58 @@ for (int position = 0; position < array.length; position++){
 System.out.println("sum: "+sum);						//statement3
 ```
 
+4. for each.
+
+A for-each style loop is designed to cycle through a collection of objects, such as an array, in strictly sequential fashion, from start to finish.
+
+```java
+int[] collection = {1,2,3}
+for(type iter-var : collection){
+  statement1; // code to be executed if there are more elements in the collection.
+  …
+}
+```
+![for-each-diagram.png](images/for-each-diagram.png)
+
+Example 1:
+
+Having this array {6,8,9,1}, create a java program (using a for each sentence) that:
+* Prints the value of each element.
+* Prints the sum of the elements in the array.
+
+![for-each-example1.png](images/for-each-example1.png)
+
+```java
+int[] array = {6, 8, 9, 1};
+int sum = 0;
+for(int value : array){
+   sum = sum + value;
+}
+System.out.println("sum: " + sum);
+```
+
+Example 2:
+
+Create a java program that prints the elements of the matrixA by row.
+  matrixA={{"Ricardo","Humberto","Mishel"},{"Alejandro","Edgar"}}
+
+![for-each-example2.png](images/for-each-example2.png)
+
+```java
+String[][] multi = {{"Ricardo","Humberto","Mishel"},{"Alejandro","Edgar"}};
+for(String[] row : multi){
+   for(String value : row){
+       System.out.print(value + ",");
+   }
+   System.out.println();
+}
+```
+
+
+
+
+
+
 
 
 
