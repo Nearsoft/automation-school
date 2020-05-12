@@ -34,7 +34,7 @@ if (condition)  {
 }
 ```
 
-Multiple flavors of if statements can be used.
+**Multiple flavors of if statements can be used.**
 
 1. if.
 2. if-else.
@@ -128,14 +128,14 @@ switch (expression) {
     // default statement sequence
 }
 ```
-Parts of the switch statement:
+**Parts of the switch statement:**
 
 * Expression must be of type byte, short, int, char, enumeration, String or equivalent wrappers.
 * Each value specified in the case statements must be a unique constant expression. Duplicate case values are not allowed. The type of each value must be compatible with the type of expression.
 * The break statement is used inside the switch to terminate a statement sequence. 
 * The default statement is optional and executed if none of the case values is matched. 
 
-The switch statement works like this: 
+**The switch statement works like this: **
 
 The value of the expression is compared with each of the values in the case statements. If a match is found, the code sequence following that case statement is executed. If none of the constants matches the value of the expression, then the default statement is executed. However, the default statement is optional. If no case matches and no default is present, then no further action is taken. 
 
@@ -331,7 +331,7 @@ for(initialization; condition; iteration) {
 }
 ```
 
-The for loop operates as follows:
+**The for loop operates as follows:**
 
 1. Initialization:
 * The initialization portion of the loop is executed, as soon as the loop starts. 
@@ -521,7 +521,7 @@ In Java, the break statement has three uses.
 2. It can be used to exit a loop. 
 3. It can be used as a form of goto using labeled statements (not explained in this document).
 
-Using break to Exit a Loop.
+**Using break to Exit a Loop.**
 
 By using break, you can force immediate termination of a loop, bypassing the conditional expression and any remaining code in the body of the loop. When a break statement is encountered inside a loop, the loop is terminated and program control resumes at the next statement following the loop.
 
