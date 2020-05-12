@@ -11,9 +11,9 @@ Java uses control statements to cause the flow of execution to advance and branc
 
 ![control-statement-hierarchy.png](images/control-statement-hierarchy.png)
 
-<h2>Selection Statements
+<h2>Selection Statements</h2>
 
-<h3>1. If
+<h3>1. If</h3>
 
 An if statement enables you to execute a set of statements in your code based on the result of a condition. This condition must always evaluate to a boolean or a Boolean value. 
 
@@ -66,7 +66,7 @@ if (age <= 17){
 }
 ```
   
-<h4>Nested ifs
+<h4>Nested ifs</h4>
 
 A nested if is an if statement that is the target of another if or else. Nested ifs are very
 common in programming. When you nest ifs, the main thing to remember is that an else
@@ -102,7 +102,7 @@ else { // this else refers to if(i == 10)
 
 The final else is not associated with if(j<20) because it is not in the same block (even though it is the nearest if without an else). Rather, the final else is associated with if(i==10). The inner else refers to if(k>100) because it is the closest if within the same block.
 
-<h3>2. switch.
+<h3>2. switch.</h3>
 
 You can use a switch statement to compare the value of a variable with multiple values. For each of these values, you can define a set of statements to execute. 
 
@@ -179,9 +179,9 @@ Console:
   Weekend!
 ```
 
-<h2>Iteration statements
+<h2>Iteration statements</h2>
 
-<h3>1. while
+<h3>1. while</h3>
 
 The while loop is Java’s most fundamental loop statement. It repeats a statement or block while its controlling condition is true.
 
@@ -261,7 +261,7 @@ Console:
   Midpoint is 15
 ```
 
-<h3>2. do while.
+<h3>2. do while.</h3>
 
 The do-while loop always executes its body at least once, because its conditional expression is at the bottom of the loop. The conditional must be a Boolean or boolean expression.
 
@@ -314,7 +314,7 @@ Console:
   tick 1
 ```
 
-<h3>3. for.
+<h3>3. for.</h3>
 
 A for loop is usually used to execute a set of statements a fixed number of times.
 
@@ -434,7 +434,7 @@ Console:
   sum: 24
   ```
   
-<h3>4. for each.
+<h3>4. for each.</h3>
 
 A for-each style loop is designed to cycle through a collection of objects, such as an array, in strictly sequential fashion, from start to finish.
 
@@ -511,9 +511,9 @@ Console:
   Ricardo Humberto Mishel 
   Alejandro Edgar
 ```
-<h2>Jump Statements
+<h2>Jump Statements</h2>
 
-<h3>1. break.
+<h3>1. break.</h3>
 
 In Java, the break statement has three uses. 
 
@@ -557,7 +557,7 @@ Console:
   out of loop
 ```
 
-<h3>2. continue.
+<h3>2. continue.</h3>
 
 In Java, the continue statement has two uses. 
 
@@ -603,7 +603,7 @@ Console:
   out of loop
 ```
 
-<h3>3. return.
+<h3>3. return.</h3>
 
 The return statement is used to explicitly return from a method. That is, it causes program control to transfer back to the caller of the method.
 
