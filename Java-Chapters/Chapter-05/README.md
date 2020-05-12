@@ -403,6 +403,79 @@ System.out.println("out of loop");
 
 ![continue-example1.png](images/continue-example1.png)
 
+3. return.
+
+The return statement is used to explicitly return from a method. That is, it causes program control to transfer back to the caller of the method.
+
+Let's review the next code whitout the use of return:
+
+```java
+public class Main {
+   public static void main(String[] args) {
+       System.out.println("before call");
+       methodToCall(true);
+       System.out.println("after call");
+   }
+   private static void methodToCall(boolean condition) {
+       if(condition){
+           System.out.println("in condition");
+       }
+       System.out.println("not returning");
+       System.out.println("end of method and returning");
+   }
+}
+```
+
+It prints in console:
+
+```
+Console when true: 
+   	before call
+    in condition
+    not returning
+    end of method and returning
+    after call
+```
+
+If we add a return statement into the if statement in the method methodToCall():
+
+```java
+public class Main {
+   public static void main(String[] args) {
+       System.out.println("before call");
+       methodToCall(true);
+       System.out.println("after call");
+   }
+   private static void methodToCall(boolean condition) {
+       if(condition){
+           System.out.println("in condition and return");
+           return;
+       }
+       System.out.println("not returning");
+       System.out.println("end of method and returning");
+   }
+}```
+
+Now it prints in console:
+
+```
+Console when true: 
+   	before call
+    in condition and return
+    after call
+```
+    
+As we can see, when the condition is true, the execution of the method methodToCall() enters into the if and executes the return statement, this makes the execution flow to return to the caller method (the main method) and in this case System.out.println("not returning"); and System.out.println("end of method and returning"); statements are not executed.
+
+
+
+
+
+
+
+
+
+
 
 
 
