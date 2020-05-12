@@ -334,6 +334,40 @@ for(String[] row : multi){
 }
 ```
 
+Jump Statements
+
+1. break.
+
+In Java, the break statement has three uses. 
+
+1. It terminates a statement sequence in a switch statement (We already see this use in the switch statement section). 
+2. It can be used to exit a loop. 
+3. It can be used as a form of goto (not explained in this document).
+
+Using break to Exit a Loop.
+
+By using break, you can force immediate termination of a loop, bypassing the conditional expression and any remaining code in the body of the loop. When a break statement is encountered inside a loop, the loop is terminated and program control resumes at the next statement following the loop.
+
+![break-diagram.png](images/break-diagram.png)
+
+Example 1:
+
+Having this array {6,8,9,1}, create a java program (using a for each sentence) that:
+
+* Prints the value of each element.
+* If the number 8 is found in the array, the program stops printing values.
+
+```java
+int[] array = {6, 8, 9, 1};
+for(int value : array){
+   if(value == 8){
+       break;
+   }
+   System.out.println(value);
+}
+System.out.println("out of loop");
+```
+![break-example1.png](images/break-example1.png)
 
 
 
