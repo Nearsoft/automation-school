@@ -219,3 +219,20 @@ do{
    counter--;
 }while(counter > 0);
 ```
+
+3. for.
+
+A for loop is usually used to execute a set of statements a fixed number of times.
+
+```java
+for(initialization; condition; iteration) {
+  statement1; // code to be executed
+  …
+}
+```
+
+![for-diagram.png](images/for-diagram.png)
+
+The for loop operates as follows. When the loop first starts, the initialization portion of the loop is executed. Generally, this is an expression that sets the value of the loop control variable, which acts as a counter that controls the loop. It is important to understand that the initialization expression is executed only once. Next, condition is evaluated. This must be a Boolean expression. It usually tests the loop control variable against a target value. If this expression is true, then the body of the loop is executed. If it is false, the loop terminates. Next, the iteration portion of the loop is executed. This is usually an expression that increments or decrements the loop control variable. The loop then iterates, first evaluating the conditional expression, then executing the body of the loop, and then executing the iteration expression with each pass. This process repeats until the controlling expression is false.
+
+
