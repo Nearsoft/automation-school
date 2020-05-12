@@ -3,11 +3,11 @@
 
 Control Statements
 
-A programming language uses control statements to cause the flow of execution to advance and branch based on changes to the state of a program. Java’s program control statements can be put into the following categories: selection, iteration, and jump. 
+Java uses control statements to cause the flow of execution to advance and branch based on changes to the state of a program. Control statements can be categorized into: selection, iteration, and jump. 
 
 1. Selection statements: Allow your program to choose different paths of execution based upon the outcome of an expression or the state of a variable.
 2. Iteration statements: Enable program execution to repeat one or more statements.
-3. Jump statements: Allow your program to execute in a nonlinear fashion.
+3. Jump statements: Allow your program to execute in a nonlinear way.
 
 ![control-statement-hierarchy.png](images/control-statement-hierarchy.png)
 
@@ -15,7 +15,7 @@ Selection Statements
 
 1. If
 
-An if construct enables you to execute a set of statements in your code based on the result of a condition. This condition must always evaluate to a boolean or a Boolean value. You can specify a set of statements to execute when this condition evaluates to true or false.
+An if statement enables you to execute a set of statements in your code based on the result of a condition. This condition must always evaluate to a boolean or a Boolean value. 
 
 ![if1.png](images/if1.png) 
 ```java
@@ -45,6 +45,17 @@ Write a java program that reads an age variable and prints the following:
   3. If age is 80 or more prints elder.
   
   ![if-flavors-example.png](images/if-flavors-example.png)
+  
+```java  
+int age = 90;
+if (age <= 17){
+   System.out.println("child");
+}else if(age < 80){
+   System.out.println("adult");
+}else {
+   System.out.println("elder");
+}
+```
   
 Nested ifs
 
@@ -80,10 +91,7 @@ else { // this else refers to if(i == 10)
 }
 ```
 
-The final else is not associated with if(j<20) because it is not in
-the same block (even though it is the nearest if without an else). Rather, the final else is
-associated with if(i==10). The inner else refers to if(k>100) because it is the closest if within
-the same block.
+The final else is not associated with if(j<20) because it is not in the same block (even though it is the nearest if without an else). Rather, the final else is associated with if(i==10). The inner else refers to if(k>100) because it is the closest if within the same block.
 
 2. switch.
 
@@ -91,7 +99,7 @@ You can use a switch statement to compare the value of a variable with multiple 
 
 ![switch-diagram.png](images/switch-diagram.png)
 
-Expression must be of type byte, short, int, char, enumeration or String.
+Expression must be of type byte, short, int, char, enumeration, String or equivalent wrappers.
 
 Each value specified in the case statements must be a unique constant expression. Duplicate case values are not allowed. The type of each value must be compatible with the type of expression.
 
@@ -126,6 +134,11 @@ switch (day) {
    default:
        	System.out.println("Invalid day?");
 }
+```
+
+```
+Console: 
+  Weekend!
 ```
 
 Iteration statements
@@ -170,6 +183,16 @@ while(counter > 0) {
 }
 ```
 
+```
+Console: 
+  tick 5
+  tick 4
+  tick 3
+  tick 2
+  tick 1
+```
+
+
 
 Example 2:
 
@@ -183,6 +206,11 @@ int n2 = 20;
 while(++n1 < --n2);
 System.out.println("Midpoint is " + n1);
 ```
+```
+Console: 
+  Midpoint is 15
+```
+
 2. do while.
 
 As you just saw, if the conditional expression controlling a while loop is initially false, then the body of the loop will not be executed at all. However, sometimes it is desirable to execute the body of a loop at least once, even if the conditional expression is false to begin with. In other words, there are times when you would like to test the termination expression at the end of the loop rather than at the beginning. Fortunately, Java supplies a loop that does just that: the do-while. The do-while loop always executes its body at least once, because its conditional expression is at the bottom of the loop. Condition must be a Boolean expression.
