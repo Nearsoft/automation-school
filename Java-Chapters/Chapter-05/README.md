@@ -153,10 +153,16 @@ Example:
 Write a java program that simulates a counter for a bomb it has to start the countdown in 5 and print countdown as follows:
 
 thick 5
+
 thick 4
+
 thick 3
+
 thick 2
+
 thick 1
+
+![while-example1.png](images/while-example1.png)
 
 
 
