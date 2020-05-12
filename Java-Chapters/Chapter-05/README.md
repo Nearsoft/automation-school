@@ -49,6 +49,8 @@ Write a java program that reads an age variable and prints the following:
   2. If age is greater than 17 prints adult, but...
   3. If age is 80 or more prints elder.
   
+Diagram:
+  
   ![if-flavors-example.png](images/if-flavors-example.png)
   
 Solution:  
@@ -104,6 +106,8 @@ The final else is not associated with if(j<20) because it is not in the same blo
 
 You can use a switch statement to compare the value of a variable with multiple values. For each of these values, you can define a set of statements to execute. 
 
+Flow diagram of a switch statement:
+
 ![switch-diagram.png](images/switch-diagram.png)
 
 A common switch statement looks like the following code:
@@ -145,7 +149,11 @@ Write a java program (using a switch statement) that reads a String day variable
 * If day is equal to SAT or SUN, prints Weekend!.
 * If day takes another value, prints invalid day?
 
+Diagram:
+
 ![switch-example.png](images/switch-example.png)
+
+Solution:
 
 ```java
 String day = "SUN";
@@ -177,7 +185,11 @@ Iteration statements
 
 The while loop is Java’s most fundamental loop statement. It repeats a statement or block while its controlling condition is true.
 
+Flow diagram of a while statement:
+
 ![while-diagram.png](images/while-diagram.png)
+
+A common while statement looks like the following code:
 
 ```java
 boolean condition = true;
@@ -207,6 +219,8 @@ Each iteration is shown in the following image:
 
 ![while-example1.png](images/while-example1.png)
 
+Solution:
+
 ```java
 int counter = 5;
 while(counter > 0) {
@@ -234,6 +248,8 @@ Each iteration is shown in the following image:
 
 ![while-example2.png](images/while-example2.png)
 
+Solution:
+
 ```java
 nt n1 = 10;
 int n2 = 20;
@@ -249,7 +265,11 @@ Console:
 
 The do-while loop always executes its body at least once, because its conditional expression is at the bottom of the loop. The conditional must be a Boolean or boolean expression.
 
+Flow diagram of a do while statement:
+
 ![do-while-diagram.png](images/do-while-diagram.png)
+
+A common do while statement looks like the following code:
 
 ```java
 boolean condition = true;
@@ -276,6 +296,8 @@ Each iteration is shown in the following image:
 
 ![do-while-example.png](images/do-while-example.png)
 
+Solution:
+
 ```java
 int counter = 5;
 do{
@@ -296,14 +318,18 @@ Console:
 
 A for loop is usually used to execute a set of statements a fixed number of times.
 
+Flow diagram of a for statement:
+
+![for-diagram.png](images/for-diagram.png)
+
+A common for statement looks like the following code:
+
 ```java
 for(initialization; condition; iteration) {
   statement1; // code to be executed
   …
 }
 ```
-
-![for-diagram.png](images/for-diagram.png)
 
 The for loop operates as follows:
 
@@ -341,6 +367,8 @@ Each iteration is shown in the following image:
 
 ![for-example1.png](images/for-example1.png)
 
+Solution:
+
 ```java
 for(int counter = 5; counter > 0; counter--) {
    System.out.println("tick " + counter);
@@ -357,10 +385,12 @@ Console:
 
 Example 2:
 
-
+This exampple demonstrates that the for statement is capable of declare multiple variables in the initialization section and to execute multiple statements in the iteration or update section.
 
 
 ![for-example2.png](images/for-example2.png)
+
+Solution:
 
 ```java
 for(int num1=0, num2=2; num1 < 4; num1++, num2 = num2 + 2, System.out.println(" end of iteration")){
