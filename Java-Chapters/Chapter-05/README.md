@@ -342,7 +342,7 @@ In Java, the break statement has three uses.
 
 1. It terminates a statement sequence in a switch statement (We already see this use in the switch statement section). 
 2. It can be used to exit a loop. 
-3. It can be used as a form of goto (not explained in this document).
+3. It can be used as a form of goto using labeled statements(not explained in this document).
 
 Using break to Exit a Loop.
 
@@ -367,7 +367,33 @@ for(int value : array){
 }
 System.out.println("out of loop");
 ```
+
 ![break-example1.png](images/break-example1.png)
+
+2. continue.
+
+In Java, the continue statement has two uses. 
+
+2. It can be used to exit the current iteration in a loop. 
+3. It can be used as a form of goto using labeled statements(not explained in this document).
+
+Using continue statement to exit the current iteration in a loop. 
+
+The continue  statement  is  used  to  skip  the  remaining  steps  in  the  current  iteration and start with the next loop iteration. 
+
+![continue-diagram.png](images/continue-diagram.png)
+
+Example:
+
+Having this array {6,8,9}, create a java program (using a for each sentence) that:
+
+* Prints the value of each element.
+* If the number 8 is found in the array, the program skips printing that number.
+
+![continue-example1.png](images/continue-example1.png)
+
+
+
 
 
 
