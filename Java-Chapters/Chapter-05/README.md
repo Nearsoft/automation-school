@@ -407,6 +407,8 @@ Having this array {6,8,9,1}, create a java program that:
 
 ![for-example3.png](images/for-example3.png)
 
+Solution:
+
 ```java
 int sum = 0;
 int[] array = {6, 8, 9, 1};
@@ -421,14 +423,28 @@ System.out.println("sum: "+sum);						//statement3
 
 A for-each style loop is designed to cycle through a collection of objects, such as an array, in strictly sequential fashion, from start to finish.
 
+
+Flow diagram of a for each statement:
+
+![for-each-diagram.png](images/for-each-diagram.png)
+
+A common for each statement looks like the following code:
+
 ```java
-int[] collection = {1,2,3}
+int[] collection = {1,2,3};
 for(type iter-var : collection){
   statement1; // code to be executed if there are more elements in the collection.
   …
 }
 ```
-![for-each-diagram.png](images/for-each-diagram.png)
+
+Where:
+
+* type specifies the type of the variable.
+* iter-var specifies the name of an iteration variable that will receive the elements from a collection, one at a time, from beginning to end. 
+* The collection being cycled through is specified by collection.
+
+With each iteration of the loop, the next element in the collection is retrieved and stored in iter-var. The loop repeats until all elements in the collection have been obtained.
 
 Example 1:
 
@@ -436,7 +452,11 @@ Having this array {6,8,9,1}, create a java program (using a for each sentence) t
 * Prints the value of each element.
 * Prints the sum of the elements in the array.
 
+Each iteration is shown in the following image:
+
 ![for-each-example1.png](images/for-each-example1.png)
+
+Solution:
 
 ```java
 int[] array = {6, 8, 9, 1};
@@ -446,24 +466,36 @@ for(int value : array){
 }
 System.out.println("sum: " + sum);
 ```
+```
+Console: 
+  sum: 24
+```
 
 Example 2:
 
 Create a java program that prints the elements of the matrixA by row.
   matrixA={{"Ricardo","Humberto","Mishel"},{"Alejandro","Edgar"}}
 
+Each iteration is shown in the following image:
+
 ![for-each-example2.png](images/for-each-example2.png)
+
+Solution:
 
 ```java
 String[][] multi = {{"Ricardo","Humberto","Mishel"},{"Alejandro","Edgar"}};
 for(String[] row : multi){
    for(String value : row){
-       System.out.print(value + ",");
+       System.out.print(value + " ");
    }
    System.out.println();
 }
 ```
-
+```
+Console:
+  Ricardo Humberto Mishel 
+  Alejandro Edgar
+```
 Jump Statements
 
 1. break.
