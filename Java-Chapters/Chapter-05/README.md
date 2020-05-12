@@ -7,10 +7,9 @@ A programming language uses control statements to cause the flow of execution to
 and branch based on changes to the state of a program. Java’s program control statements
 can be put into the following categories: selection, iteration, and jump. 
 
-1. Selection statements: Allow your program to choose different paths of execution based upon the outcome of an
-2. expression or the state of a variable. 
-3. Iteration statements: Enable program execution to repeat one or more statements. 
-Jump statements: Allow your program to execute in a nonlinear fashion.
+1. Selection statements: Allow your program to choose different paths of execution based upon the outcome of an expression or the state of a variable.
+2. Iteration statements: Enable program execution to repeat one or more statements.
+3. Jump statements: Allow your program to execute in a nonlinear fashion.
 
 ![control-statement-hierarchy.png](images/control-statement-hierarchy.png)
 
@@ -100,6 +99,5 @@ Each value specified in the case statements must be a unique constant expression
 
 The switch statement works like this: The value of the expression is compared with each of the values in the case statements. If a match is found, the code sequence following that case statement is executed. If none of the constants matches the value of the expression, then the default statement is executed. However, the default statement is optional. If no case matches and no default is present, then no further action is taken. 
 
-The break statement is used inside the switch to terminate a statement sequence. When a break statement is encountered, execution branches to the first line of code that follows the entire switch statement.
-
+The break statement is used inside the switch to terminate a statement sequence. When a break statement is encountered, execution branches to the first line of code that follows the entire switch statement. In the absence of the break statement, control will fall through the  remaining  code  and  execute  the  code  corresponding  to  all  the remaining  cases that follow that matching case.
 
