@@ -529,7 +529,7 @@ A flow diagram of a break statement being executed:
 
 ![break-diagram.png](images/break-diagram.png)
 
-Example 1:
+Example:
 
 Having this array {6,8,9,1}, create a java program (using a for each sentence) that:
 
@@ -551,6 +551,11 @@ System.out.println("out of loop");
 Each iteration is described in the next image:
 
 ![break-example1.png](images/break-example1.png)
+```
+Console: 
+  6
+  out of loop
+```
 
 2. continue.
 
@@ -590,6 +595,13 @@ System.out.println("out of loop");
 Each iteration is described in the next image:
 
 ![continue-example1.png](images/continue-example1.png)
+
+```
+Console: 
+  6
+  9
+  out of loop
+```
 
 3. return.
 
