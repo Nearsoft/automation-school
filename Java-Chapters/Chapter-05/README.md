@@ -196,5 +196,26 @@ do {
     ...
 } while (condition);
 ```
+Example:
 
+Write a java program that simulates a counter for a bomb it has to start the countdown in 5 and print countdown as follows:
 
+thick 5
+
+thick 4
+
+thick 3
+
+thick 2
+
+thick 1
+
+![do-while-example.png](images/do-while-example.png)
+
+```java
+int counter = 5;
+do{
+   System.out.println("tick " + counter);
+   counter--;
+}while(counter > 0);
+```
