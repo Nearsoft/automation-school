@@ -109,6 +109,8 @@ Write a java program (using a switch statement) that reads a String day variable
 * If day is equal to SAT or SUN, prints Weekend!.
 * If day takes another value, prints invalid day?
 
+![switch-example.png](images/switch-example.png)
+
 ```java
 String day = "SUN";
 switch (day) {
