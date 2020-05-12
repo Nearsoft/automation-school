@@ -51,6 +51,8 @@ Write a java program that reads an age variable and prints the following:
   
   ![if-flavors-example.png](images/if-flavors-example.png)
   
+Solution:  
+  
 ```java  
 int age = 90;
 if (age <= 17){
@@ -122,14 +124,18 @@ switch (expression) {
     // default statement sequence
 }
 ```
+Parts of the switch statement:
 
-Expression must be of type byte, short, int, char, enumeration, String or equivalent wrappers.
+* Expression must be of type byte, short, int, char, enumeration, String or equivalent wrappers.
+* Each value specified in the case statements must be a unique constant expression. Duplicate case values are not allowed. The type of each value must be compatible with the type of expression.
+* The break statement is used inside the switch to terminate a statement sequence. 
+* The default statement is optional and executed if none of the case values is matched. 
 
-Each value specified in the case statements must be a unique constant expression. Duplicate case values are not allowed. The type of each value must be compatible with the type of expression.
+The switch statement works like this: 
 
-The switch statement works like this: The value of the expression is compared with each of the values in the case statements. If a match is found, the code sequence following that case statement is executed. If none of the constants matches the value of the expression, then the default statement is executed. However, the default statement is optional. If no case matches and no default is present, then no further action is taken. 
+The value of the expression is compared with each of the values in the case statements. If a match is found, the code sequence following that case statement is executed. If none of the constants matches the value of the expression, then the default statement is executed. However, the default statement is optional. If no case matches and no default is present, then no further action is taken. 
 
-The break statement is used inside the switch to terminate a statement sequence. When a break statement is encountered, execution branches to the first line of code that follows the entire switch statement. In the absence of the break statement, control will fall through the  remaining  code  and  execute  the  code  corresponding  to  all  the remaining  cases that follow that matching case.
+When a break statement is encountered, execution branches to the first line of code that follows the entire switch statement. In the absence of the break statement, control will fall through the  remaining  code  and  execute  the  code  corresponding  to  all  the remaining  cases that follow that matching case.
 
 Example:
 
