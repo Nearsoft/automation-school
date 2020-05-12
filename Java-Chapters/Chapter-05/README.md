@@ -135,7 +135,7 @@ switch (expression) {
 * The break statement is used inside the switch to terminate a statement sequence. 
 * The default statement is optional and executed if none of the case values is matched. 
 
-**The switch statement works like this: **
+**The switch statement works like this:**
 
 The value of the expression is compared with each of the values in the case statements. If a match is found, the code sequence following that case statement is executed. If none of the constants matches the value of the expression, then the default statement is executed. However, the default statement is optional. If no case matches and no default is present, then no further action is taken. 
 
