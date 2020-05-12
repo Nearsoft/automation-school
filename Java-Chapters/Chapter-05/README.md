@@ -130,5 +130,23 @@ switch (day) {
 }
 ```
 
+Iteration statements
+
+1. while
+
+The while loop is Java’s most fundamental loop statement. It repeats a statement or block while its controlling expression is true.
+
+![while-diagram.png](images/while-diagram.png)
+
+```java
+boolean condition = true;
+while(condition) {
+  statement1; // code to be executed if the condition is true
+  ...
+}
+```
+
+The condition can be any Boolean expression. The body of the loop will be executed as long as the conditional expression is true. When condition becomes false, control passes to the next line of code immediately following the loop. The curly braces are unnecessary if only a single statement is being repeated.
+
 
 
