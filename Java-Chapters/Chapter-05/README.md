@@ -1,7 +1,7 @@
 # Chapter 05 - Control Statements
 
 
-<h1>Control Statements
+<h1>Control Statements</h1>
 
 Java uses control statements to cause the flow of execution to advance and branch based on changes to the state of a program. Control statements can be categorized into: selection, iteration, and jump. 
 
