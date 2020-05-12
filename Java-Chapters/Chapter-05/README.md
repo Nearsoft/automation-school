@@ -3,9 +3,7 @@
 
 Control Statements
 
-A programming language uses control statements to cause the flow of execution to advance
-and branch based on changes to the state of a program. Java’s program control statements
-can be put into the following categories: selection, iteration, and jump. 
+A programming language uses control statements to cause the flow of execution to advance and branch based on changes to the state of a program. Java’s program control statements can be put into the following categories: selection, iteration, and jump. 
 
 1. Selection statements: Allow your program to choose different paths of execution based upon the outcome of an expression or the state of a variable.
 2. Iteration statements: Enable program execution to repeat one or more statements.
@@ -185,6 +183,18 @@ int n2 = 20;
 while(++n1 < --n2);
 System.out.println("Midpoint is " + n1);
 ```
+2. do while.
 
+As you just saw, if the conditional expression controlling a while loop is initially false, then the body of the loop will not be executed at all. However, sometimes it is desirable to execute the body of a loop at least once, even if the conditional expression is false to begin with. In other words, there are times when you would like to test the termination expression at the end of the loop rather than at the beginning. Fortunately, Java supplies a loop that does just that: the do-while. The do-while loop always executes its body at least once, because its conditional expression is at the bottom of the loop. Condition must be a Boolean expression.
+
+![do-while-diagram.png](images/do-while-diagram.png)
+
+```java
+boolean condition = true;
+do {
+   statement1; // code to be executed at least once
+    ...
+} while (condition);
+```
 
 
