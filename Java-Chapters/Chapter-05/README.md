@@ -259,9 +259,10 @@ for(int counter = 5; counter > 0; counter--) {
 
 Example 2:
 
-```java
+
 ![for-example2.png](images/for-example2.png)
 
+```java
 for(int num1=0, num2=2; num1 < 4; num1++, num2 = num2 + 2, System.out.println(" end of iteration")){
    System.out.print("value of num1: "+num1);	//statement1
    System.out.print(" value of num2: "+num2);	//statement2
