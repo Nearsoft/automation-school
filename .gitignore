@@ -24,3 +24,15 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# IDE configuration folder/files
+.settings/
+.idea/
+.iml
+
+# Project files
+out/
+target/
+.env
+.project
+.class
