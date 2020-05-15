@@ -478,7 +478,3 @@ In addition to the keywords, Java reserves the following: **true**, **false**, a
 - Part to becoming Java programmer is learning to use standard java classes
 
 </div>
-
-<h1>References</h1>
-
-- Herbert Schildt. (2014). Java: The Complete Reference. United States of America: McGraw-Hill Education Group. (https://drive.google.com/file/d/0B7cdRbw_opBFOXllSHJlbWpvblk/view )
