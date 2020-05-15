@@ -261,11 +261,11 @@ When you run this program, you will see the following output:
 
 </div>
 
-<h2>Two Control Statements</h2>
+<h1>Two Control Statements</h1>
 
 <div style="text-align: justify">
 
-<h3>The If Statement</h3>
+<h2>The If Statement</h2>
 
 The Java if statement works much like the **if** statement in any other language. Its simplest form is shown here:
 
@@ -393,7 +393,7 @@ Java provides a special increment operator which performs the operation **x = x+
 
 </div>
 
-<h2>Using Block of Code</h2>
+<h1>Using Blocks of Code</h1>
 
 <div style="text-align: justify">
 
@@ -411,17 +411,17 @@ Here, if **x** is less than **y**, then both statements inside the block will be
 </div>
 
 
-<h2>Lexical Issues</h2>
+<h1>Lexical Issues</h1>
 
 <div style="text-align: justify">
 
 Is time to more formally describe the atomic elements of Java. Java programs are a collection of whitespace, identifiers, literals, comments, operators, separators, and keywords.
 
-<h3>Whitespace</h3>
+<h2>Whitespace</h2>
 
 Java is a free-form language. This means that you do not need to follow any special indentation rules. For instance, the **Example** program could have been written all on one line or in any other strange way you felt like typing it, as long as there was at least one whitespace character between each token that was not already delineated by an operator or separator. In Java, whitespace is a space, tab, or newline.
 
-<h3>Indetifiers</h3>
+<h2>Indetifiers</h2>
 
 Identifiers are used to name things, such as classes, variables, and methods. An identifier may be any descriptive sequence of uppercase and lowercase letters, numbers, or the underscore and dollar-sign characters. Java is case-sensitive, so **DATA** is a different identifier than **data**. Some examples of valid identifiers are:
 
@@ -436,7 +436,7 @@ Invalid identifiers:
 </p>
 
 
-<h3>Literals</h3>
+<h2>Literals</h2>
 A constant value in Java is created by using a literal representation of it. For example, here are some literals:
 
 <p align="center">
@@ -445,11 +445,11 @@ A constant value in Java is created by using a literal representation of it. For
 
 Left to right, the first literal specifies an integer, the next is a floating-point value, the third is a character constant, and the last is a string. A literal can be used anywhere a value of its type is allowed.
 
-<h3>Comments</h3>
+<h2>Comments</h2>
 
 As mentioned, there are three types of comments defined by Java. You have already seen two: _single-line_ and _multiline_. The third type is called a _documentation_ comment. This type of comment is used to produce an HTML file that documents your program. The documentation comment begins with a /** and ends with a */.
 
-<h3>Separators</h3>
+<h2>Separators</h2>
 
 In Java, there are a few characters that are used as separators. The most commonly used separator in Java is the semicolon. The separators are shown in the following table:
 
@@ -457,7 +457,7 @@ In Java, there are a few characters that are used as separators. The most common
     <img src="./images/10-separators.png" width="450">
 </p>
 
-<h3>The Java Keywords</h3>
+<h2>The Java Keywords</h2>
 There are 50 keywords currently defined in the Java language (see Table 2-1). These keywords, combined with the syntax of the operators and separators, form the foundation of the Java language. These keywords cannot be used as identifiers. 
 
 <p align="center">
@@ -468,7 +468,7 @@ In addition to the keywords, Java reserves the following: **true**, **false**, a
 
 </div>
 
-<h2>The Java Class Libraries</h2>
+<h1>The Java Class Libraries</h1>
 
 <div style="text-align: justify">
 
@@ -479,6 +479,6 @@ In addition to the keywords, Java reserves the following: **true**, **false**, a
 
 </div>
 
-<h2>References</h2>
+<h1>References</h1>
 
 - Herbert Schildt. (2014). Java: The Complete Reference. United States of America: McGraw-Hill Education Group. (https://drive.google.com/file/d/0B7cdRbw_opBFOXllSHJlbWpvblk/view )
