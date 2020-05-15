@@ -94,7 +94,7 @@ Each method or variable in a class may be marked _private_ or _public_. The _pub
 _Inheritance_ is the process by which one object acquires the properties of another object. This is important because it supports the concept of hierarchical classification. For example, a Golden Retriever is part of the classification dog, which in turn is part of the mammal class, which is under the larger class animal. Without the use of hierarchies, each object would need to define all of its characteristics explicitly. However, by use of inheritance, an object need only define those qualities that make it unique within its class. It can inherit its general attributes from its parent. The class dog is known as a _subclass_ of animals, where animals are referred to as dog's _superclass_.
 
 <p align="center">
-    <img src="./images/4-inheritance.png" width="400">
+    <img src="./images/4-Inheritance.png" width="400">
 </p>
 
 Inheritance interacts with encapsulation as well. If a given class encapsulates some attributes, then any subclass will have the same attributes plus any that it adds as part of its specialization. A new subclass inherits all of the attributes of all of its ancestors.
