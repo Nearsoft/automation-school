@@ -9,7 +9,7 @@ Training program for QA Automation using Java with Selenium
 3. [Data Types, Variables, and Arrays](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-03)
 4. [Operators](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-04)
 5. [Control Statements](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-05)
-6. [Git Version control](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-06)
+6. [Git Version Control](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-06)
 7. [Classes](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-07)
 8. [A Closer Look at Methods and Classes](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-08)
 9. [Inheritance](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-09)
