@@ -1,480 +1,328 @@
-# Chapter 02 - An Overview of Java
+# Chapter 02 - Data Types, Variables, and Arrays
+
+<h1>Data Types, Variables, and Arrays</h1>
+
+Part of Java's security and robustness comes from the fact that it is a strongly typed language. This means that:
+
+1. Every variable has a type
+2. Every expression has a type
+3. Every type is strictly defined
+
+All assignments are verified for type compatibility. The Java compiler checks all expressions and parameters to ensure that the types are compatible. Any discrepancy between these types is an error.
+
+<h2>Primitive data types</h2>
+
+Java defines eight primitive data types. They can be grouped into four groups: the integers (byte, short, int and long); floating point numbers (float and double); the characters (char) and the booleans (boolean).
+
+<table class="tg">
+<tbody>
+  <tr>
+    <td class="tg-lu0m">byte</td>
+    <td class="tg-lu0m">8 bits</td>
+    <td class="tg-lu0m">-128</td>
+    <td class="tg-lu0m">127 inc</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">short</td>
+    <td class="tg-lu0m">16 bits</td>
+    <td class="tg-lu0m">-32,768</td>
+    <td class="tg-lu0m">32,767 inc</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">int</td>
+    <td class="tg-lu0m">32 bits</td>
+    <td class="tg-lu0m">–2,147,483,648</td>
+    <td class="tg-lu0m">2,147,483,647 inc</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">long</td>
+    <td class="tg-lu0m">64 bits</td>
+    <td class="tg-lu0m">–9,223,372,036,854,775,808</td>
+    <td class="tg-lu0m">9,223,372,036,854,775,807 inc</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">float</td>
+    <td class="tg-lu0m">32 bits</td>
+    <td class="tg-lu0m">1.4e–045</td>
+    <td class="tg-lu0m">3.4e+038</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">double</td>
+    <td class="tg-lu0m">64 bits</td>
+    <td class="tg-lu0m">4.9e–324</td>
+    <td class="tg-lu0m">1.8e+308</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">boolean</td>
+    <td class="tg-lu0m"> </td>
+    <td class="tg-lu0m">true</td>
+    <td class="tg-lu0m">false</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">char</td>
+    <td class="tg-lu0m"> </td>
+    <td class="tg-lu0m">\u0000 (or 0)</td>
+    <td class="tg-lu0m">\uFFFF (or 65,536 i)</td>
+  </tr>
+</tbody>
+</table>
+
+The smallest integer type is the byte. This type of data is useful when working with data streams from a network or file.
+Short has a range of –32,768 to 32,767. This is probably the least used in Java.
+The most widely used integer type is int. Variables of type int are commonly used to control loops and index arrays.
+Long is the largest integer, useful when the int is not large enough to contain the desired value.
+
+Floating point numbers, also known as real numbers, are used when evaluating expressions that require fractional precision.
+The float type is useful when a fractional component is needed, but a high degree of precision is not required.
+However when precision needs to be maintained, for example in many iterative calculations, or large value numbers are being manipulated, double is the best option.
+
+Boolean types only return two values, true and false. It is the type of data that the relational operators return and they are the ones that handle the control declarations like the if and the for.
+
+Java uses Unicode to represent characters. The char range is from 0 to 65,536. Or represented in the ASCI code \u0000 - \uFFFF
 
 
-<h1>What Is Java?</h1>
-<div style="text-align: justify">
-
-Java is a programming language and computing platform first released by Sun Microsystems in 1995. The language was initially called _Oak_ but later the project was finally named _Java_, from Java Coffee, the Indonesian coffee.
-
-There are lots of applications and websites that will not work unless you have Java installed.
-Java applications are called WORA (Write Once Run Anywhere). This means a programmer can develop Java code on one system and can expect it to run on any other Java-enabled system without any adjustment. This is all possible because of the **Java Virtual Machine** 
-(JVM).
-
-The JVM is a program whose purpose is to execute other programs and it has two primary functions: to allow Java programs to run on any device or operating system, and to manage and optimize program memory
-
-</div>
-
-<h1>How Does Java Work?</h1>
-
-<div style="text-align: justify">
-
-When a Java application is executed using an Integration Development Environment (IDE), after writing the code, the only necessary action to run the program is to press the IDE play button. But what is happening behind the scenes is the following:
-
-<p align="center">
-    <img src="./images/1-Java_workflow.png">
-</p>
-
-1. **Writing the source code**: The source code is needed first, in this case it will be a file which contain all the java code. The extension of such file must be **.java**
-2. **Compiling the source code**: After writing the code, the java compiler will be executed to verify that every single line has been written without errors. If everything is correct, a file with extension **.class** will be generated. Such file contains the source code translated to a bytecode language
-3. **Executing the program**: Finally, the JVM will read the **.class** file and based on the platform where the application is being executed, the bytecode will be translated to machine language that can be executed on the device.
-
-</div>
-
-<h1>Major Features of Java</h1>
-<div style="text-align: justify">
-
-- **Simple**: Java was designed to be easy for the professional programmer to learn and use effectively.
-- **Secure**: in java can be created applications called applets. An applet is a Java program that runs in a Web browser. In order for Java to enable applets to be downloaded and executed on the client computer safely, it was necessary to prevent an applet from launching an attack to local machine resources.
-- **Portable**: Java is portable because it facilitates you to carry the Java bytecode to any platform. 
-- **Object Oriented**: Java manages to strike a balance between the purist’s “everything is an object” paradigm and the pragmatist’s “stay out of my way” model. The object model in Java is simple and easy to extend, while primitive types, such as integers, are kept as high-performance nonobjects.
-- **Robust**: robust simply means strong. Java is robust because:
-    - It uses strong memory management.
-    - There is a lack of pointers that avoids security problems.
-    - There are exception handling and the type checking mechanism in Java. All these points make Java robust.
-- **Multithreaded**: Java supports multithreaded programming, which allows you to write programs that do many things simultaneously. 
-- **Architecture-Neutral**: Java compiler generates an architecture-neutral object file format, which makes the compiled code executable on many processors with the presence of Java runtime system.
-- **Interpreted and High Performance**: the Java bytecode was carefully designed so that it would be easy to translate directly into native machine code for very high performance by using a just-in-time compiler.
-- **Distributed**: Java is designed for the distributed environment of the Internet because it handles TCP/IP protocols. In fact, accessing a resource using a URL is not much different from accessing a file. Java also supports Remote Method Invocation (RMI). This feature enables a program to invoke methods across a network.
-- **Dynamic**: Java programs carry with them substantial amounts of run-time type information that is used to verify and resolve accesses to objects at run time.
-
-</div>
+<h4>Primitive data types default values</h4>
+<table class="tg">
+<tbody>
+  <tr>
+    <td class="tg-lu0m">byte</td>
+    <td class="tg-lu0m">0</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">short</td>
+    <td class="tg-lu0m">0</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">int</td>
+    <td class="tg-lu0m">0</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">long</td>
+    <td class="tg-lu0m">0L</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">float</td>
+    <td class="tg-lu0m">0.0f</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">double</td>
+    <td class="tg-lu0m">0.0d</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">boolean</td>
+    <td class="tg-lu0m">false</td>
+  </tr>
+  <tr>
+    <td class="tg-lu0m">char</td>
+    <td class="tg-lu0m">‘\u0000’</td>
+  </tr>
+</tbody>
+</table>
 
 
-<h1>Object Oriented Programming</h1>
+<h2>Variables</h2>
+A variable is a way to refer to a value that can be changed at runtime. Is the basic unit of storage in a Java program. A variable is defined by the combination of a type, an identifier, and an initializer that is optional.
 
-<div style="text-align: justify">
+<h4>Rules for naming variables</h4>
 
-Object-oriented programming (OOP) is at the core of Java. In fact, all Java programs are to at least some extent object-oriented. OOP is so integral to Java that it is best to understand its basic principles before you begin writing even simple Java programs. 
+<ul>
+<li>All variable names must begin with a letter of the alphabet, an underscore, or (_), or a dollar sign ($).  The convention is to always use a letter of the alphabet.  The dollar sign and the underscore are discouraged.</li>
+<li>After the first initial letter, variable names may also contain letters and the digits 0 to 9.  No spaces or special characters are allowed.</li>
+<li>The name can be of any length, but don't get carried away.  Remember that you will have to type this name.</li>
+<li>Uppercase characters are distinct from lowercase characters.  Using ALL uppercase letters are primarily used to identify constant variables.  Remember that variable names are case-sensitive.</li>
+<li>CamelCase recommended.</li>
+<li>You cannot use a java keyword (reserved word) for a variable name.</li>
+</ul>
 
-<h2>Two Paradigms</h2>
+<h4>Declaring a variable</h4>
+In Java, all variables must be declared before they can be used. This is how a variable is declared in java.
 
-All computer programs consist of two elements: code and data. There are two paradigms that govern how a program is constructed. The first way is called the _process-oriented model_. This approach characterizes a program as a series of linear steps (that is, code). The _process-oriented model_ can be thought of as _code acting on data_, problems with this approach appear as programs grow larger and more complex.
+type identifier [ = value ][, identifier [= value ] ...];
 
-To manage increasing complexity, the second approach, called **object-oriented programming**, was conceived. Object-oriented programming organizes a program around its data (that is, objects) and a set of well-defined interfaces to that data. An object-oriented program can be characterized as data controlling access to code.
-
-<h2>Abstraction</h2>
-
-An essential element of object-oriented programming is abstraction. Humans manage complexity through abstraction. For example, people do not think of a car as a set of tens of thousands of individual parts. They think of it as a well-defined object with its own unique behavior.
-
-<p align="center">
-    <img src="./images/2-abstraction.png" width="400">
-</p>
-
-- Program data can be transformed into its component object by abstraction
-- Objects are concrete entities that respond messages telling them to “do something”
-
-<h2>The Three OOP Principles</h2>
-
-<h3>Encapsulation</h3>
-
-_Encapsulation_ is the mechanism that binds together code and the data it manipulates, and keeps both safe from outside interference and misuse. One way to think about encapsulation is as a protective wrapper that prevents the code and data from being arbitrarily accessed by other code defined outside the wrapper.
-
-In Java, the basis of encapsulation is the **class**. A class defines the structure and behavior (data and code) that will be shared by a set of objects. Each object of a given class contains the structure and behavior defined by the class. For this reason, objects are sometimes referred to as _instances of a class_.
-
-When you create a class, you will specify the code and data that constitute that class. Specifically, the data defined by the class are referred to as _member variables_ or _instance variables_. The code that operates on that data is referred to as _member methods_ or just _methods_.
-
-Each method or variable in a class may be marked _private_ or _public_. The _public_ interface of a class represents everything that external users of the class need to know, or may know. The _private_ methods and data can only be accessed by code that is a member of the class.
-
-<p align="center">
-    <img src="./images/3-encapsulation.png" width="400">
-</p>
-
-<h3>Inheritance</h3>
-
-_Inheritance_ is the process by which one object acquires the properties of another object. This is important because it supports the concept of hierarchical classification. For example, a Golden Retriever is part of the classification dog, which in turn is part of the mammal class, which is under the larger class animal. Without the use of hierarchies, each object would need to define all of its characteristics explicitly. However, by use of inheritance, an object need only define those qualities that make it unique within its class. It can inherit its general attributes from its parent. The class dog is known as a _subclass_ of animals, where animals are referred to as dog's _superclass_.
-
-<p align="center">
-    <img src="./images/4-Inheritance.png" width="400">
-</p>
-
-Inheritance interacts with encapsulation as well. If a given class encapsulates some attributes, then any subclass will have the same attributes plus any that it adds as part of its specialization. A new subclass inherits all of the attributes of all of its ancestors.
-
-<p align="center">
-    <img src="./images/4a-inheritance.png" width="400">
-</p>
-
-<h3>Polymorphism</h3>
-
-_Polymorphism_ (from Greek, meaning “many forms”) is a feature that allows one interface to be used for a general class of actions. More generally, the concept of polymorphism is often expressed by the phrase “one interface, multiple methods.” This means that it is possible to design a generic interface to a group of related activities. This helps reduce complexity by allowing the same interface to be used to specify a general class of action.
-
-In java the are many ways to use the polymorphism, one of them is that an object can take many forms, and another one is that exists many forms to do the same thing. For example, consider a Transport interface and three derived subclasses of it: Horse, Car and Airplane. Every transport media will implement the action of driving but the way to drive will be different on each case. Another important feature is since a Horse implement the Transport interface, it can be threated as a Transport object or as a Horse object.
-
-<p align="center">
-    <img src="./images/5-polymorphism.png" width="400">
-</p>
-
-</div>
-
-<h1>A First Simple Program</h1>
+Here, type is one of the Java data types. The identifier is the name of the variable. The variable can be initialized by specifying the equal sign and a value. This value must be compatible with the specified type of the variable.
+Here are several examples of variable declarations of various types. Note that some include an initialization.
 
 ```java
-/*
-  This is a simple java program.
-  Call this file "Example.java".
-*/
-
-class Example {
-   // Your program begins with a call to main().
-   public static void main(String args[]) {
-       System.out.println("Hello World!");
-   }
-}
+int a, b, c;            //declares three ints a, b and c
+int d = 3, e, f = 5;    //declares three more ints and initializes d and f
+byte z = 22;            //initializes z
+double pi = 3.14159;    //declares an approximation on pi
+char x = 'x';           //the variable x has the value 'x'
 ```
 
-<div style="text-align: justify">
-
-<h2>Entering the program</h2>
-
-- The first thing that you must learn about Java is that the name you give to a source file is very important. For this example, the name of the source file should be **Example.java**.
-- In Java, all code must reside inside a class. By convention, the name of the main class should match the name of the file that holds the program. You should also make sure that the capitalization of the filename matches the class name. The reason for this is that Java is case-sensitive.
-
-<h2>Compiling the Program</h2>
-
-To compile the Example program, execute the compiler **javac**, specifying the name of the source file on the command line, as shown here:
-
-        C:\>javac Example.java
-
-The javac compiler creates a file called **Example.class** that contains the bytecode version of the program. The Java bytecode is the intermediate representation of your program that contains instructions the Java Virtual Machine will execute.
-
-To actually run the program, you must use the Java application launcher called java. To do so, pass the class name Example as a command-line argument, as shown here:
-
-        C:\>java Example
-
-When the program is run, the following output is displayed:
-
-        Hello World!
-
-<h2>A Closer Look at the First Sample Program</h2>
-
-1. The program begins with the following lines:
-
-        /*
-        This is a simple Java program. Call this file "Example.java".
-        */
-
-    This is a _comment_. The contents of a comment are ignored by the compiler.
-
-    Java supports three styles of comments. The one shown at the top of the program is called a multiline comment. This type of comment must begin with /* and end with */.
-
-2. The next line of code in the program is shown here:
-
-        class Example {
-
-    This line uses the keyword **class** to declare that a new class is being defined. **Example** is an identifier that is the name of the class. The entire class definition, including all of its members, will be between the opening curly brace ({) and the closing curly brace (})
-
-3. The next line in the program is the single-line comment, shown here: 
-
-        // Your program begins with a call to main().
-
-    This is the second type of comment supported by Java. A single-line comment begins with a // and ends at the end of the line.
-
-4. The next line of code is shown here:
-
-        public static void main(String args[ ]) {
-
-    - This line begins the **main( )** method. This is the line at which the program will begin executing. Keep in mind that Java is case-sensitive. Thus, **Main** is different from **main**. It is important to understand that the Java compiler will compile classes that do not contain a **main( )** method. But java has no way to run these classes.
-    - The **public** keyword is an access modifier, which allows the programmer to control the visibility of class members. In this case, **main( )** must be declared as public, since it must be called by code outside of its class when the program is started. 
-    - The keyword **static** allows **main( )** to be called without having to instantiate a particular instance of the class. This is necessary since **main( )** is called by the Java Virtual Machine before any objects are made. 
-    - The keyword **void** simply tells the compiler that **main( )** does not return a value.
-    - Any information that you need to pass to a method is received by variables specified within the set of parentheses that follow the name of the method. These variables are called _parameters_.
-    - If there are no parameters required for a given method, you still need to include the empty parentheses. In **main( )**, there is only one parameter. String args[ ] declares a parameter named args, which is an array of instances of the class String. Objects of type String store character strings. In this case, args receives any command-line arguments present when the program is executed.
-    - The last character on the line is the {. This signals the start of **main( )**’s body.
-
-5. The next line of code is shown here. Notice that it occurs inside **main( )**.
-
-        System.out.println("Hello World!");
-
-    - This line outputs the string "Hello World!" followed by a new line on the screen. Output is actually accomplished by the built-in **println( )** method. In this case, **println( )** displays the string which is passed to it. The line begins with **System.out**. **System** is a predefined class that provides access to the system, and **out** is the output stream that is connected to the console.
-    - Notice that the **println( )** statement ends with a semicolon. All statements in Java end with a semicolon. 
-
-6. The first } in the program ends **main( )**, and the last } ends the **Example** class definition.
-
-</div>
-
-<h1>A Second Short Program</h1>
-
-<div style="text-align: justify">
-
-As you may know, a variable is a named memory location that may be assigned a value by your program. The next program shows how a variable is declared and how it is assigned a value.
+<h4>Dynamic Initialization</h4>
+Although in the previous example variables were only initialized using constants, Java allows variables to be dynamically initialized, using any valid expression at the time the variable is declared.
+For example, here is a short program that calculates the length of the hypotenuse of a right triangle given the lengths of its two opposite sides.
 
 ```java
-/*
-Here is another short example.
-Call this file "Example2.java".
-*/
-class Example2 {
-   public static void main(String args[]) {
-       int num; // this declares a variable called num
-       num = 100; // this assigns num the value 100
-       System.out.println("This is num: " + num);
-       num = num * 2;
-       System.out.print("The value of num * 2 is ");
-       System.out.println(num);
-   }
-}
-```
-When you run this program, you will see the following output:
-
-    This is num: 100
-    The value of num * 2 is 200
-
-1. Let’s take a close look at why this output is generated. The first new line in the program is shown here:
-
-        int num; // this declares a variable called num
-
-    This line declares an integer variable called num. Java requires that variables be declared before they are used. Following is the general form of a variable declaration:
-
-    >_type var-name;_
-
-    Here, _type_ specifies the type of variable being declared, and _var-name_ is the name of the variable. If you want to declare more than one variable of the specified type, you may use a comma-separated list of variable names. Java defines several data types, including integer, character, and floating-point. The keyword **int** specifies an integer type.
-
-2. In the program, the line
-
-        num = 100; // this assigns num the value 100
-
-    assigns to **num** the value 100. In Java, the assignment operator is a single equal sign.
-
-3. The next line of code outputs the value of num preceded by the string "This is num:".
-
-        System.out.println("This is num: " + num);
-    
-    In this statement, the plus sign causes the value of **num** to be appended to the string that precedes it, and then the resulting string is output.
-
-4. The next line of code assigns **num** the value of **num** times 2. Like most other languages, Java uses the * operator to indicate multiplication. After this line executes, num will contain the value 200.
-
-5. Here are the next two lines in the program:
-
-        System.out.print ("The value of num * 2 is "); 
-        System.out.println (num);
-
-    Several new things are occurring here. First, the built-in method **print( )** is used to display the string "The value of num * 2 is ". This string is not followed by a newline. This means that when the next output is generated, it will start on the same line. The **print( )** method is just like **println( )**, except that it does not output a newline character after each call. Now look at the call to **println( )**. Notice that num is used by itself. Both **print( )** and **println( )** can be used to output values of any of Java’s built-in types.
-
-</div>
-
-<h1>Two Control Statements</h1>
-
-<div style="text-align: justify">
-
-<h2>The If Statement</h2>
-
-The Java if statement works much like the **if** statement in any other language. Its simplest form is shown here:
-
-```java    
-if(condition) { 
-    statement;     
-}
-```
-
-Here, _condition_ is a Boolean expression. If _condition_ is true, then the statement is executed. If _condition_ is false, then the statement is bypassed. Here is an example: 
-
-```java  
-if(num < 100) System.out.println("num is less than 100");
-```
-
-Java defines a full complement of relational operators which may be used in a conditional expression. Here they are:
-
-<p align="center">
-    <img src="./images/6-relational_operators.png" width="400">
-</p>
-
-Here is a program that illustrates the if statement:
-
-```java  
-/*
-Demonstrate the if.
-Call this file "IfSample.java". 
-*/
-class IfSample {
-    public static void main(String args[]) {
-        int x, y;
-
-        x = 10;
-        y = 20;
-
-        if (x < y) {
-            System.out.println("x is less than y");
-        }
-
-        x = x * 2;
-        if (x == y) {
-            System.out.println("x now equal to y");
-        }
-
-        x = x * 2;
-        if (x > y) {
-            System.out.println("x now greater than y");
-        }
-
-        // this won't display anything
-        if (x == y) {
-            System.out.println("you won't see this");
-        }
+// Demonstrate dynamic initialization.
+class DynInit {
+public static void main(String args[]) {
+double a = 3.0, b = 4.0;
+// c is dynamically initialized
+double c = Math.sqrt(a * a + b * b);
+System.out.println("Hypotenuse is " + c);
     }
 }
 ```
-The output generated by this program is shown here:
 
-    x is less than y
-    x now equal to y
-    x now greater than y
+Here, three local variables are declared: a, b, and c. The first two, a and b, are initialized by constants. However, c is dynamically initialized with the result of the expression in parentheses. 
+The program uses another of Java's built-in methods, sqrt (), which is a member of the Math class, to calculate the square root of its argument. The key point here is that the initialization expression 
+can use any valid element at the time of initialization, including method calls, other variables, or literals.
 
-Notice one other thing in this program. The line
+
+<h2>Type Conversion and Casting</h2>
+In java it is quite common to assign a value of one type to a variable of another type. If the two types are compatible, Java will perform the conversion automatically (widening conversion). 
+For example, it is always possible to assign an int value to a variable of type long. However, not all types are supported, and therefore not all type conversions are implicitly allowed. 
+For example, there is no defined automatic conversion from double to byte. Fortunately, narrowing conversion is still possible. To do this, the casting must be used, it performs an explicit conversion between incompatible types.
+
+<ul>
+<li>Java’s Automatic Conversions (Widening Conversion)</li>
+<li>Casting Incompatible Types (Narrowing Conversion)</li>
+</ul>
+
+<h4>Widening Conversion</h4>
+An automatic or widening conversion will be done only if the following two conditions are met:
+The two types are compatible
+Destination type is greater than source type
+When these two conditions are met, widening conversion occurs. For example, the int type is always large enough to contain all valid byte values, so an explicit conversion declaration is not required. 
+In widening conversion, numeric types, including integers and floating point, are compatible with each other. However, there are no automatic conversions of numeric types to char or boolean. 
+Also, char and boolean are not compatible with each other.
+
+Example:
+```java
+// Implicit type casting
+public class Demo {
+    public static void main(String[] args) {
+        // Casting byte to int type
+        byte a = 100;
+        int b = a;
+        System.out.println("value of a: "+a);
+        System.out.println("value of b: "+b);
+        // Casting int to long type
+        long c = b;
+        System.out.println("value of c: "+c);
+        // Casting long to float type
+        float d = c;
+        System.out.println("value of d: "+d);
+    }
+}
+
+Output:
+value of a: 100
+value of b: 100
+value of c: 100
+value of d: 100.0
+```
+
+<h4>Narrowing Conversion</h4>
+What would happen if we wanted to assign an integer value to a variable of type byte. This conversion will not be done automatically, because a byte is smaller than an int. This type of conversion is called a narrowing conversion, 
+since you are explicitly reducing the value to match the target type.
+To cast incompatible types, cast is used, which is simply an explicit type of conversion. Here, target-type specifies the desired type to convert the specified value to.
+
+(target-type) value
+
+Example:
+```java
+// Explicit type casting
+public class Demo {
+    public static void main(String[] args) {
+        // Casting float to long type
+        float a = 100.25f;
+        long b = (long)a; // It truncates result
+        System.out.println("value of a: "+a);
+        System.out.println("value of b:"+b);
+        // Casting long to int type
+        int c = (int)b;
+        System.out.println("value of c:"+c);
+        // Casting int to byte type
+        byte d = (byte)c;
+        System.out.println("value of d:"+d);
+    }
+}
+
+Output:
+value of a: 100.25
+value of b: 100
+value of c: 100
+value of d: 100
+```
+
+<h2>Arrays</h2>
+Arrays are containers of values of the same type. They are useful as a means of storing related information.
+Obtaining an array is a two-step process. First, a variable of the desired array type must be declared. Second, the memory that will contain the array must be allocated, using the new operator, and assigned to the array type variable.
+
+type var-name[ ];
+
+array-var = new type [size];
+
+It is possible to combine these two steps and do it in one:
+This example assigns an array of 12-element integers and links them to the month_days variable.
+
+Example:
+```java
+int month_days[] = new int[12];
+```
+
+Once an array has been assigned, an element can be accessed by specifying its index in square brackets. All indexes in the array start at zero. For example, this statement assigns the value 28 to the second element of month_days:
 
 ```java
-int x, y
+month_days[1] = 28;
 ```
-declares two variables, **x** and **y**, by use of a comma-separated list.
 
-</div>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-cv9r">0</th>
+    <th class="tg-cv9r">1 = 28</th>
+    <th class="tg-lu0m">2</th>
+    <th class="tg-lu0m">3</th>
+    <th class="tg-lu0m">4</th>
+    <th class="tg-lu0m">5</th>
+    <th class="tg-lu0m">6</th>
+    <th class="tg-lu0m">7</th>
+    <th class="tg-lu0m">8</th>
+    <th class="tg-lu0m">9</th>
+    <th class="tg-lu0m">10</th>
+    <th class="tg-lu0m">11</th>
+  </tr>
+</thead>
+</table>
 
-<h2>The for Loop</h2>
 
-<div style="text-align: justify">
+<h4>Arrays initializers</h4>
+Arrays can be initialized when declared. An array initializer is a comma-separated list of expressions surrounded by braces. Commas separate the values of the array elements. The array will automatically be created large enough 
+to contain the number of elements specified in the initializer. By initializing the array in this way there is no need to use the new operator.
 
-Java supplies a powerful assortment of loop constructs. Perhaps the most versatile is the for loop. The simplest form of the for loop is shown here:
+The following code creates an initialized array of integers to store the number of days in each month:
 
-```java    
-for(initialization; condition; iteration) { 
-    statement;     
+```java
+class AutoArray {
+public static void main(String args[]) {
+int month_days[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+System.out.println("April has " + month_days[3] + " days.");
+    }
 }
 ```
 
-Where:
-- the _initialization_ portion of the loop sets a loop control variable to an initial value.
-- _condition_ is a boolean expression that tests the loop control variable if the result of the expression is true, the for loop continue iterating, is the result is false the loop terminates
-- _iteration_ expression determines how the loop control variable is changed each time the loop iterates
-
-Here is a short program that illustrates the for loop:
-
-```java    
-/*
-Demonstrate the for loop.
-Call this file "ForTest.java". 
-*/
-class ForTest {
-   public static void main(String args[]) {
-       int x;
-
-       for (x = 0; x < 10; x = x + 1) {
-           System.out.println("This is x: " + x);
-       }
-   }
-}
-```
-This program generates the following output:
-
-    This is x: 0
-    This is x: 1
-    This is x: 2
-    This is x: 3
-    This is x: 4
-    This is x: 5
-    This is x: 6
-    This is x: 7
-    This is x: 8
-    This is x: 9
-
-In this example, **x** is the loop control variable. It is initialized to zero in the initialization portion of the **for**. At the start of each iteration (including the first one), the conditional test **x < 10** is performed. If the outcome of this test is true, the **println( )** statement is executed, and then the iteration portion of the loop is executed, which increases **x** by 1. This process continues until the conditional test is false.
-
-Java provides a special increment operator which performs the operation **x = x+1** more efficiently. The operator is **++**. The increment operator increases its operand by one. By use of the increment operator we can increment **x** like this:
-
-    x++;
+When you run this program, it prints the number of days in April. As mentioned, Java array indexes start with zero, so the number of days in April is month_day [3] or 30.
 
 
-</div>
+<h4>Multidimensional Arrays</h4>
+In Java, multidimensional arrays are actually array of arrays. To declare a variable of type multidimensional array, each additional index is specified using another set of square brackets. 
 
-<h1>Using Blocks of Code</h1>
-
-<div style="text-align: justify">
-
-Java allows two or more statements to be grouped into _blocks of code_, also called _code blocks_. This is done by enclosing the statements between opening and closing curly braces. Once a block of code has been created, it becomes a logical unit that can be used any place that a single statement can. For example, a block can be a target for Java’s **if** and **for** statements.
-
-Consider this **if** statement:
-```java  
-if(x < y) { // begin a block 
-    x = y;
-    y = 0;
-}           // end of block
+For example, the following declares a two-dimensional array variable called twoD:
+```java
+int twoD[][] = new int[4][5];
 ```
 
-Here, if **x** is less than **y**, then both statements inside the block will be executed.
-</div>
+This assigns a 4 by 5 matrix to twoD.
+
+![bidimensional_array](images/bidimensional_array.png)
 
 
-<h1>Lexical Issues</h1>
-
-<div style="text-align: justify">
-
-Is time to more formally describe the atomic elements of Java. Java programs are a collection of whitespace, identifiers, literals, comments, operators, separators, and keywords.
-
-<h2>Whitespace</h2>
-
-Java is a free-form language. This means that you do not need to follow any special indentation rules. For instance, the **Example** program could have been written all on one line or in any other strange way you felt like typing it, as long as there was at least one whitespace character between each token that was not already delineated by an operator or separator. In Java, whitespace is a space, tab, or newline.
-
-<h2>Indetifiers</h2>
-
-Identifiers are used to name things, such as classes, variables, and methods. An identifier may be any descriptive sequence of uppercase and lowercase letters, numbers, or the underscore and dollar-sign characters. Java is case-sensitive, so **DATA** is a different identifier than **data**. Some examples of valid identifiers are:
-
-<p align="center">
-    <img src="./images/7-identifiers.png" width="500">
-</p>
-
-Invalid identifiers:
-
-<p align="center">
-    <img src="./images/8-invalid_identifiers.png" width="300">
-</p>
-
-
-<h2>Literals</h2>
-A constant value in Java is created by using a literal representation of it. For example, here are some literals:
-
-<p align="center">
-    <img src="./images/9-literals.png" width="400">
-</p>
-
-Left to right, the first literal specifies an integer, the next is a floating-point value, the third is a character constant, and the last is a string. A literal can be used anywhere a value of its type is allowed.
-
-<h2>Comments</h2>
-
-As mentioned, there are three types of comments defined by Java. You have already seen two: _single-line_ and _multiline_. The third type is called a _documentation_ comment. This type of comment is used to produce an HTML file that documents your program. The documentation comment begins with a /** and ends with a */.
-
-<h2>Separators</h2>
-
-In Java, there are a few characters that are used as separators. The most commonly used separator in Java is the semicolon. The separators are shown in the following table:
-
-<p align="center">
-    <img src="./images/10-separators.png" width="450">
-</p>
-
-<h2>The Java Keywords</h2>
-There are 50 keywords currently defined in the Java language (see Table 2-1). These keywords, combined with the syntax of the operators and separators, form the foundation of the Java language. These keywords cannot be used as identifiers. 
-
-<p align="center">
-    <img src="./images/11-java_keywords.png" width="500">
-</p>
-
-In addition to the keywords, Java reserves the following: **true**, **false**, and **null**.
-
-</div>
-
-<h1>The Java Class Libraries</h1>
-
-<div style="text-align: justify">
-
-- The methods **println()** and **print()** are part of the **System** class provided by java that is automatically included in every program.
-- Java environment relies on several built-int class libraries that contain many built-it methods
-- Java = Java language + standard classes
-- Part to becoming Java programmer is learning to use standard java classes
-
-</div>
+<h2>A Few Words About Strings...</h2>
+In this session we were talking about java data types and arrays, nothing about String was mentioned. This is not because Java does not support that type, it does. It's just that String is not a primitive type.
+Nor is it simply an array of characters. String defines an object, it is used to declare variables of type string. You can also declare string arrays. A quoted string constant can be assigned to a string variable. A variable of type String can be assigned to another variable of type String.
+Later, you will see that string objects have many special features and attributes that make them quite powerful and easy to use.
+ 

@@ -1,693 +1,323 @@
-# Chapter 05 - Control Statements
+# Chapter 05 - Git Version Control
 
+## History
+Git (*ɡɪt*). Linus Torvalds wanted a distributed system that he could use like BitKeeper, but none of the available free systems met his needs. For his design criterion, he specified that patching should take no more than three seconds, and added three more points:
+* Take Concurrent Versions System (CVS) as an example of what not to do; if in doubt, make the exact opposite decision.
+* Support a distributed, BitKeeper-like workflow.
+* Include very strong safeguards against corruption, either accidental or malicious.
 
-<h1>Control Statements</h1>
+## SVN vs. GIT
+SVN tracks differences of a file, Git’s version control model is based on snapshots. For example, a SVN commit consists of a diff compared to the original file added to the repository. Git, on the other hand, records the entire contents of each file in every commit.
 
-Java uses control statements to cause the flow of execution to advance and branch based on changes to the state of a program. Control statements can be categorized into: selection, iteration, and jump. 
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/svn-git.svg">
+  </p>
+</div>
 
-1. Selection statements: Allow your program to choose different paths of execution based upon the outcome of an expression or the state of a variable.
-2. Iteration statements: Enable program execution to repeat one or more statements.
-3. Jump statements: Allow your program to execute in a nonlinear way.
+## Installing
+**How to install?** [Atlassian guide](https://www.atlassian.com/git/tutorials/install-git) **Note:** There are several ways to install Git. Use what you like
 
-![control-statement-hierarchy.png](images/control-statement-hierarchy.png)
-
-<h2>Selection Statements</h2>
-
-<h3>1. If</h3>
-
-An if statement enables you to execute a set of statements in your code based on the result of a condition. This condition must always evaluate to a boolean or a Boolean value. 
-
-Flow diagram of an if statement:
-
-  ![if1.png](images/if1.png) 
-
-A common if statement looks like the following code:
-
-```java
-boolean condition = true;
-if (condition)  {
-  statement1; // code to be executed if the condition is true
-  statementN;
-}else {
-  statement2; // code to be executed if the condition is not true
-  statementN;
-}
+* How to setup user/email?
+```console
+# Verifying username
+$ git config user.email
+# Adding username
+$ git config user.email <your@email.here>
 ```
 
-**Multiple flavors of if statements can be used.**
+## Getting and Creating Projects
+* What is a repository?
+A Git repository is a virtual storage of your project. It allows you to save versions of your code, which you can access when needed. 
 
-1. if.
-2. if-else.
-3. if-else-if-else.
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/repository.svg">
+  </p>
+</div>
 
-![if-flavors.png](images/if-flavors.png)
+### Creating Repository
+```console
+# Creating local repository
+$ git init
+```
 
-Example:
+* How to create a remote repo?
+  * [Github](https://help.github.com/en/enterprise/2.14/user/articles/creating-a-new-repository)
+  * [Bitbucket](https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html)
 
-Write a java program that reads an age variable and prints the following:
-  1. If age is less or equal 17 prints child.
-  2. If age is greater than 17 prints adult, but...
-  3. If age is 80 or more prints elder.
+```console
+# Setup remote repository
+$ git remote add <name> <url>
+```
+
+### Cloning Repository
+```console
+# Cloning remote repository
+$ git clone <url>
+```
+
+## Snapshotting
+### Categories
+* **Untracked:** This file exists locally, but isn’t a part of the Git repository. The file’s change history will not be recorded and it will not be pushed to remote copies of your repository when you run `git push`. Unless they’ve been added to an ignore list, untracked files will show up when viewing your Git status.
+```console
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	<file>
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+* **Tracked:**  Git tracks the file’s change history and it will be pushed to remote copies when running `git push`. These files will show up in your Git status report if there are differences between the version on your hard drive and the last committed version.
+* **Tracked/Unstaged changes** exist in your working directory, but Git hasn’t recorded them into its version history yet. You’ll usually want to *stage* them (mark them to become part of your next commit) or *discard* them by restoring the last committed version of the file.
+```console
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
   
-Diagram:
+	modified:   <file>
   
-  ![if-flavors-example.png](images/if-flavors-example.png)
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+* **Tracked/Staged changes** are a lot like unstaged changes, except that they’ve been marked to be committed the next time you run `git commit`. Upon your next commit, your staged changes become part of your Git history. `git status` will no longer list them as changes since they’re part of your last commit now.
+```console
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
   
-Solution:  
-  
-```java  
-int age = 90;
-if (age <= 17){
-   System.out.println("child");
-}else if(age < 80){
-   System.out.println("adult");
-}else {
-   System.out.println("elder");
-}
-```
-  
-<h4>Nested ifs</h4>
-
-A nested if is an if statement that is the target of another if or else. Nested ifs are very
-common in programming. When you nest ifs, the main thing to remember is that an else
-statement always refers to the nearest if statement that is within the same block as the else
-and that is not already associated with an else.
-
-Example:
-```java
-if(i == 10) {
-   if(j < 20) a = b;
-   if(k > 100) c = d;
-   else a = c; 
-}
-else a = d; 
-```
-Organized:
-
-```java
-if(i == 10) {
-   if(j < 20) {
-       a = b;
-   }
-   if(k > 100) { // this if is
-       c = d;
-   }else { // associated with this else
-       a = c;
-   }
-}
-else { // this else refers to if(i == 10)
-   a = d;
-}
+	modified:   <file>
 ```
 
-The final else is not associated with if(j<20) because it is not in the same block (even though it is the nearest if without an else). Rather, the final else is associated with if(i==10). The inner else refers to if(k>100) because it is the closest if within the same block.
+### Stash
+By default, running `git stash` will stash:
+* changes that have been added to your index (staged changes)
+* changes made to files that are currently tracked by Git (unstaged changes)
 
-<h3>2. switch.</h3>
+But it will not stash:
+* new files in your working copy that have not yet been staged
+* files that have been ignored
 
-You can use a switch statement to compare the value of a variable with multiple values. For each of these values, you can define a set of statements to execute. 
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/stash.svg">
+  </p>
+</div>
 
-Flow diagram of a switch statement:
+### Saving changes
+```console
+# Staging changes
+$ git add <file>
+# Commiting changes
+$ git commit -m <message>
 
-![switch-diagram.png](images/switch-diagram.png)
-
-A common switch statement looks like the following code:
-
-```java
-switch (expression) {
-  case value1:
-    // statement sequence
-  break;
-  case value2:
- 	  // statement sequence
-  break;
-    ...
-  case valueN:
-    // statement sequence
-  break;
-  default:
-    // default statement sequence
-}
-```
-**Parts of the switch statement:**
-
-* Expression must be of type byte, short, int, char, enumeration, String or equivalent wrappers.
-* Each value specified in the case statements must be a unique constant expression. Duplicate case values are not allowed. The type of each value must be compatible with the type of expression.
-* The break statement is used inside the switch to terminate a statement sequence. 
-* The default statement is optional and executed if none of the case values is matched. 
-
-**The switch statement works like this:**
-
-The value of the expression is compared with each of the values in the case statements. If a match is found, the code sequence following that case statement is executed. If none of the constants matches the value of the expression, then the default statement is executed. However, the default statement is optional. If no case matches and no default is present, then no further action is taken. 
-
-When a break statement is encountered, execution branches to the first line of code that follows the entire switch statement. In the absence of the break statement, control will fall through the  remaining  code  and  execute  the  code  corresponding  to  all  the remaining  cases that follow that matching case.
-
-Example:
-
-Write a java program (using a switch statement) that reads a String day variable and prints the following:
-
-* If day is equal to  MON, TUE, WED, THU or FRI, prints time to work.
-* If day is equal to SAT or SUN, prints Weekend!.
-* If day takes another value, prints invalid day?
-
-Diagram:
-
-![switch-example.png](images/switch-example.png)
-
-Solution:
-
-```java
-String day = "SUN";
-switch (day) {
-   case "MON":
-   case "TUE":
-   case "WED":
-   case "THU":
-   case "FRI":
-        System.out.println("Time to work");
-       break;
-   case "SAT":
-   case "SUN":
-       	System.out.println("Weekend!");
-       break;
-   default:
-       	System.out.println("Invalid day?");
-}
+# TIP: Changing last commit message
+$ git commit --amend -m <new message>
 ```
 
-```
-Console: 
-  Weekend!
-```
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/commit-workflow.png"><img width="50%" height=auto src="./images/commit-workflow-fast.png">
+  </p>
+</div>
 
-<h2>Iteration statements</h2>
-
-<h3>1. while</h3>
-
-The while loop is Java’s most fundamental loop statement. It repeats a statement or block while its controlling condition is true.
-
-Flow diagram of a while statement:
-
-![while-diagram.png](images/while-diagram.png)
-
-A common while statement looks like the following code:
-
-```java
-boolean condition = true;
-while(condition) {
-  statement1; // code to be executed if the condition is true
-  ...
-}
+### Undoing changes
+```console
+# Locating commit (SHA-1)
+$ git log --all
+# TIP: Single line log
+$ git log --pretty=oneline
+# Preserving changes
+$ git reset --soft <commit>
+# Deleting all
+$ git reset --hard <commit>
 ```
 
-The condition can be any Boolean or boolean expression. The body of the loop will be executed as long as the conditional expression is true. When condition becomes false, control passes to the next line of code immediately following the loop. The curly braces are unnecessary if only a single statement is being repeated.
-
-Example 1:
-
-Write a java program that simulates a counter for a bomb it has to start the countdown in 5 and print countdown as follows:
-
-thick 5
-
-thick 4
-
-thick 3
-
-thick 2
-
-thick 1
-
-Each iteration is shown in the following image:
-
-![while-example1.png](images/while-example1.png)
-
-Solution:
-
-```java
-int counter = 5;
-while(counter > 0) {
-   System.out.println("tick " + counter);
-   counter--;
-}
+## Sharing and Updating Projects
+### Fetching and Pushing
+```console
+# Getting all remotes and their branches
+$ git fetch --all
+# Pushing commits to remote/branch
+$ git push <remote> <branch>
 ```
 
+### Pull
+It’s an easy way to synchronize your local repository with upstream changes. The following diagram explains each step of the pulling process.
+
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/pull.svg">
+  </p>
+</div>
+
+#### No-Rebase vs Rebase
+
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/pull-scenario.svg">
+  </p>
+</div>
+
+```console
+$ git pull <remote>
 ```
-Console: 
-  tick 5
-  tick 4
-  tick 3
-  tick 2
-  tick 1
+The git pull command first runs git fetch which downloads content from the specified remote repository. Then a git merge is executed to merge the remote content refs and heads into a new local merge commit.
+
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/pull-default.svg">
+  </p>
+</div>
+
+```console
+$ git pull --rebase <remote>
 ```
+In this diagram, we can now see that a rebase pull does not create the new H commit. Instead, the rebase has copied the remote commits A--B--C and appended them to the local origin/master commit history.
 
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/pull-rebase.svg">
+  </p>
+</div>
 
-
-Example 2:
-
-Write a java program that finds the midpoint between 10 and 20.
-
-Each iteration is shown in the following image:
-
-![while-example2.png](images/while-example2.png)
-
-Solution:
-
-```java
-nt n1 = 10;
-int n2 = 20;
-while(++n1 < --n2);
-System.out.println("Midpoint is " + n1);
-```
-```
-Console: 
-  Midpoint is 15
-```
-
-<h3>2. do while.</h3>
-
-The do-while loop always executes its body at least once, because its conditional expression is at the bottom of the loop. The conditional must be a Boolean or boolean expression.
-
-Flow diagram of a do while statement:
-
-![do-while-diagram.png](images/do-while-diagram.png)
-
-A common do while statement looks like the following code:
-
-```java
-boolean condition = true;
-do {
-   statement1; // code to be executed at least once
-    ...
-} while (condition);
-```
-Example:
-
-Write a java program that simulates a counter for a bomb it has to start the countdown in 5 and print countdown as follows:
-
-thick 5
-
-thick 4
-
-thick 3
-
-thick 2
-
-thick 1
-
-Each iteration is shown in the following image:
-
-![do-while-example.png](images/do-while-example.png)
-
-Solution:
-
-```java
-int counter = 5;
-do{
-   System.out.println("tick " + counter);
-   counter--;
-}while(counter > 0);
-```
-```
-Console: 
-  tick 5
-  tick 4
-  tick 3
-  tick 2
-  tick 1
+## Tagging, Branching and Merging
+### Tagging
+Tags are ref's that point to specific points in Git history. Tagging is generally used to capture a point in history that is used for a marked version release (i.e. v1.0.1).
+```console
+# Default Tags
+$ git tag <tagname>
+# Annotated Tags
+$ git tag -a <tagname> -m <message>
 ```
 
-<h3>3. for.</h3>
+### Branch
+```console
+# Creating branch
+$ git branch <branch>
+# Creating remote branch
+$ git push <remote> <branch>
 
-A for loop is usually used to execute a set of statements a fixed number of times.
+# Deleting branch
+$ git branch -d[-D] <branch>
+# Deleting remote branch
+$ git push <remote> --delete <branch>
 
-Flow diagram of a for statement:
-
-![for-diagram.png](images/for-diagram.png)
-
-A common for statement looks like the following code:
-
-```java
-for(initialization; condition; iteration) {
-  statement1; // code to be executed
-  …
-}
+# Listing branchs
+$ git branch
+# Listing remote branchs
+$ git branch -r
+# Switching branchs
+$ git checkout <branch>
 ```
 
-**The for loop operates as follows:**
+### Merge
+Git merge will combine multiple sequences of commits into one unified history
 
-1. Initialization:
-* The initialization portion of the loop is executed, as soon as the loop starts. 
-* The initialization is an expression that sets the value of the loop control variable, which acts as a counter that controls the loop. 
-* Java can initialize multiple variables in this section, but all must be of the same type.
-* The initialization expression is executed only once. 
-2. Condition:
-* The condition is evaluated. This must be a Boolean or boolean expression. 
-* Tests the loop control variable against a target value. 
-* If this expression is true, then the body of the loop is executed. If it is false, the loop terminates. 
-3. Iteration:
-* This is usually an expression that increments or decrements the loop control variable. 
-* Java can execute statements in this section.
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/merge-a.png"><img width="50%" height=auto src="./images/merge-b.png">
+  </p>
+</div>
 
+#### Fast Forward Merge
+A fast-forward merge can occur when there is a linear path from the current branch tip to the target branch. Instead of “actually” merging the branches, all Git has to do to integrate the histories is move (i.e., “fast forward”) the current branch tip up to the target branch tip.
 
-The loop then iterates, first evaluating the conditional expression, then executing the body of the loop, and then executing the iteration expression with each pass. This process repeats until the controlling expression (condition) is false.
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/merge-fast.svg">
+  </p>
+</div>
 
-Example 1:
+#### 3-way merge
+When there is not a linear path to the target branch, Git has no choice but to combine them via a 3-way merge. 3-way merges use a dedicated commit to tie together the two histories.
 
-Write a java program that simulates a counter for a bomb it has to start the countdown in 5 and print countdown as follows:
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/merge-3-way.svg">
+  </p>
+</div>
 
-thick 5
+### Conflicts
+Conflicts generally arise when two people have changed the same lines in a file, or if one developer deleted a file while another developer was modifying it. Git will mark the file as being conflicted and halt the merging process. It is then the developers' responsibility to resolve the conflict.
 
-thick 4
-
-thick 3
-
-thick 2
-
-thick 1
-
-Each iteration is shown in the following image:
-
-![for-example1.png](images/for-example1.png)
-
-Solution:
-
-```java
-for(int counter = 5; counter > 0; counter--) {
-   System.out.println("tick " + counter);
-}
-```
-```
-Console: 
-  tick 5
-  tick 4
-  tick 3
-  tick 2
-  tick 1
+#### Changes in working directory
+```console
+error: Your local changes to the following files would be overwritten by merge:
+        <file>
+Please commit your changes or stash them before you merge.
+Aborting
 ```
 
-Example 2:
-
-This example demonstrates that the for statement is capable of declaring multiple variables in the initialization section and executing multiple statements inside the iteration or update section.
-
-
-![for-example2.png](images/for-example2.png)
-
-Solution:
-
-```java
-for(int num1=0, num2=2; num1 < 4; num1++, num2 = num2 + 2, System.out.println(" end of iteration")){
-   System.out.print("value of num1: "+num1);	//statement1
-   System.out.print(" value of num2: "+num2);	//statement2
-}
-```
-```
-Console:
-  value of num1: 0 value of num2: 2 end of iteration
-  value of num1: 1 value of num2: 4 end of iteration
-  value of num1: 2 value of num2: 6 end of iteration
-  value of num1: 3 value of num2: 8 end of iteration
+#### Changes in staging area
+A failure DURING a merge indicates a conflict between the current local branch and the branch being merged.
+```console
+error: Your local changes to the following files would be overwritten by merge:
+        <file>
 ```
 
-Example 3:
+#### Resolving conflicts
+```console
+$ git merge <branch>
+Auto-merging <file>
+CONFLICT (content): Merge conflict in file1.txt
+Automatic merge failed; fix conflicts and then commit the result.
 
-Having this array {6,8,9,1}, create a java program that:
-* Prints the position in the array and the value of each element.
-* Prints the sum of the elements in the array.
+# Identify merge conflicts
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
 
-![for-example3.png](images/for-example3.png)
+Changes to be committed:
+	new file:   <ready-file>
 
-Solution:
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   <conflicted-file>
 
-```java
-int sum = 0;
-int[] array = {6, 8, 9, 1};
-for (int position = 0; position < array.length; position++){
-   System.out.println("position: " + position +" value: "+ array[position]);	//statement1
-   sum = sum + array[position];						//statement2
-}
-System.out.println("sum: "+sum);						//statement3
-```
-```
-Console:
-  position: 0 value: 6
-  position: 1 value: 8
-  position: 2 value: 9
-  position: 3 value: 1
-  sum: 24
-  ```
-  
-<h3>4. for each.</h3>
-
-A for-each style loop is designed to cycle through a collection of objects, such as an array, in strictly sequential fashion, from start to finish.
-
-
-Flow diagram of a for each statement:
-
-![for-each-diagram.png](images/for-each-diagram.png)
-
-A common for each statement looks like the following code:
-
-```java
-int[] collection = {1,2,3};
-for(type iter-var : collection){
-  statement1; // code to be executed if there are more elements in the collection.
-  …
-}
+# After editing/save file
+$ git add <file>
+$ git commit -m <message>
 ```
 
-Where:
-
-* type specifies the type of the variable.
-* iter-var specifies the name of an iteration variable that will receive the elements from a collection, one at a time, from beginning to end. 
-* The collection being cycled through is specified by collection.
-
-With each iteration of the loop, the next element in the collection is retrieved and stored in iter-var. The loop repeats until all elements in the collection have been obtained.
-
-Example 1:
-
-Having this array {6,8,9,1}, create a java program (using a for each sentence) that:
-* Prints the value of each element.
-* Prints the sum of the elements in the array.
-
-Each iteration is shown in the following image:
-
-![for-each-example1.png](images/for-each-example1.png)
-
-Solution:
-
-```java
-int[] array = {6, 8, 9, 1};
-int sum = 0;
-for(int value : array){
-   sum = sum + value;
-}
-System.out.println("sum: " + sum);
-```
-```
-Console: 
-  sum: 24
-```
-
-Example 2:
-
-Create a java program that prints the elements of the matrixA by row.
-  matrixA={{"Ricardo","Humberto","Mishel"},{"Alejandro","Edgar"}}
-
-Each iteration is shown in the following image:
-
-![for-each-example2.png](images/for-each-example2.png)
-
-Solution:
-
-```java
-String[][] multi = {{"Ricardo","Humberto","Mishel"},{"Alejandro","Edgar"}};
-for(String[] row : multi){
-   for(String value : row){
-       System.out.print(value + " ");
-   }
-   System.out.println();
-}
-```
-```
-Console:
-  Ricardo Humberto Mishel 
-  Alejandro Edgar
-```
-<h2>Jump Statements</h2>
-
-<h3>1. break.</h3>
-
-In Java, the break statement has three uses. 
-
-1. It terminates a statement sequence in a switch statement (We already reviewed this use in the switch statement section). 
-2. It can be used to exit a loop. 
-3. It can be used as a form of goto using labeled statements (not explained in this document).
-
-**Using break to Exit a Loop.**
-
-By using break, you can force immediate termination of a loop, bypassing the conditional expression and any remaining code in the body of the loop. When a break statement is encountered inside a loop, the loop is terminated and program control resumes at the next statement following the loop.
-
-A flow diagram of a break statement being executed:
-
-![break-diagram.png](images/break-diagram.png)
-
-Example:
-
-Having this array {6,8,9,1}, create a java program (using a for each sentence) that:
-
-* Prints the value of each element.
-* If the number 8 is found in the array, the program stops printing values.
-
-Having the next code:
-
-```java
-int[] array = {6, 8, 9, 1};
-for(int value : array){
-   if(value == 8){
-       break;
-   }
-   System.out.println(value);
-}
-System.out.println("out of loop");
-```
-Each iteration is described in the next image:
-
-![break-example1.png](images/break-example1.png)
-```
-Console: 
-  6
-  out of loop
-```
-
-<h3>2. continue.</h3>
-
-In Java, the continue statement has two uses. 
-
-1. It can be used to exit the current iteration in a loop. 
-2. It can be used as a form of goto using labeled statements (not explained in this document).
-
-Using continue statement to exit the current iteration in a loop. 
-
-The continue  statement  is  used  to  skip  the  remaining  steps  in  the  current  iteration and start with the next loop iteration. 
-
-A flow diagram of a continue statement being executed:
-
-![continue-diagram.png](images/continue-diagram.png)
-
-Example:
-
-Having this array {6,8,9}, create a java program (using a for each sentence) that:
-
-* Prints the value of each element.
-* If the number 8 is found in the array, the program skips printing that number.
-
-Having the next code:
-
-```java
-int[] array = {6, 8, 9};
-for(int value : array){
-   if(value == 8){
-       continue;
-   }
-   System.out.println(value);
-}
-System.out.println("out of loop");
-```
-
-Each iteration is described in the next image:
-
-![continue-example1.png](images/continue-example1.png)
-
-```
-Console: 
-  6
-  9
-  out of loop
-```
-
-<h3>3. return.</h3>
-
-The return statement is used to explicitly return from a method. That is, it causes program control to transfer back to the caller of the method.
-
-Let's review the next code without the use of return:
-
-```java
-public class Main {
-   public static void main(String[] args) {
-       System.out.println("before call");
-       methodToCall(true);
-       System.out.println("after call");
-   }
-   private static void methodToCall(boolean condition) {
-       if(condition){
-           System.out.println("in condition");
-       }
-       System.out.println("not returning");
-       System.out.println("end of method and returning");
-   }
-}
-```
-
-It prints in console:
-
-```
-Console: 
-  before call
-  in condition
-  not returning
-  end of method and returning
-  after call
-```
-
-If we add a return statement into the if statement in the method methodToCall():
-
-```java
-public class Main {
-   public static void main(String[] args) {
-       System.out.println("before call");
-       methodToCall(true);
-       System.out.println("after call");
-   }
-   private static void methodToCall(boolean condition) {
-       if(condition){
-           System.out.println("in condition and return");
-           return;
-       }
-       System.out.println("not returning");
-       System.out.println("end of method and returning");
-   }
-}
-```
-
-Now it prints in console:
-
-```
-Console: 
-  before call
-  in condition and return
-  after call
-```
-    
-As we can see, when the condition is true, the execution of the method methodToCall() enters into the if and executes the return statement, this makes the execution flow to return to the caller method (the main method) and in this case System.out.println("not returning"); and System.out.println("end of method and returning"); statements are not executed.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## GitFlow
+Gitflow utilizes the core feature of Git, which is the power of branches. In this model, a repository has two main branches:
+1. **Master**—This is a highly stable branch that is always production-ready and contains the last release version of source code in production.
+2. **Develop**—Derived from the master branch, the development branch serves as a branch for integrating different features planned for an upcoming release. This branch may or may not be as stable as the master branch. It is where developers collaborate and merge feature branches.
+
+**Note:** The previous two branches are the starting points for any project. They are very important and should be protected against accidental deletion until the project is better defined. Only authorized leads or project owners should be given the responsibility to merge changes from other branches—such as the feature branch, which we’ll discuss later—to the develop or master branches.
+
+Apart from those two primary branches, there are other branches in the workflow:
+
+3. **Feature**—This derives from the develop branch and is used to develop features.
+4. **Release**—This also derives from develop branch but is used during releases.
+5. **Hotfix**—This derives from the master branch and is used to fix a bug in the production branch that was identified after a release.
+
+<div>
+  <p align="center">
+    <img width="75%" height=auto src="./images/gitflow.png">
+  </p>
+</div>
+
+## Help
+* [What is an SSH KEY?](https://www.atlassian.com/git/tutorials/git-ssh)
+* [Git GUI](https://git-scm.com/downloads/guis)
+* [On undoing, fixing, or removing commits in git](http://sethrobertson.github.io/GitFixUm/fixup.html)
+* [How to do a squash?](https://github.com/wprig/wprig/wiki/How-to-squash-commits)
+* Cheat sheets: 
+  * [Git](https://git-scm.com/docs)
+  * [Github](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
+  * [Atlassian](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
+
+## References
+* [Wiki](https://en.wikipedia.org/wiki/Git)
+* [Git](https://git-scm.com/docs)
+* [Atlassian](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud)
+* [How to git](https://howtogit.archive.pieterdedecker.be/concepts/types-of-changes.html)
+* [Axosoft](https://blog.axosoft.com/gitflow/)
