@@ -9,7 +9,11 @@ Git (*ɡɪt*). Linus Torvalds wanted a distributed system that he could use like
 ## SVN vs. GIT
 SVN tracks differences of a file, Git’s version control model is based on snapshots. For example, a SVN commit consists of a diff compared to the original file added to the repository. Git, on the other hand, records the entire contents of each file in every commit.
 
-![svn-git](images/svn-git.svg)
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/svn-git.svg">
+  </p>
+</div>
 
 ## Installing
 **How to install?** [Atlassian guide](https://www.atlassian.com/git/tutorials/install-git) **Note:** There are several ways to install Git. Use what you like
@@ -26,7 +30,11 @@ $ git config user.email <your@email.here>
 * What is a repository?
 A Git repository is a virtual storage of your project. It allows you to save versions of your code, which you can access when needed. 
 
-![repository](images/repository.svg)
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/repository.svg">
+  </p>
+</div>
 
 ### Creating Repository
 ```console
@@ -94,7 +102,11 @@ But it will not stash:
 * new files in your working copy that have not yet been staged
 * files that have been ignored
 
-![stash](images/stash.svg)
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/stash.svg">
+  </p>
+</div>
 
 ### Saving changes
 ```console
@@ -107,7 +119,11 @@ $ git commit -m <message>
 $ git commit --amend -m <new message>
 ```
 
-![commit-workflow](images/commit-workflow.png)![commit-workflow-fast](images/commit-workflow-fast.png)
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/commit-workflow.png"><img width="50%" height=auto src="./images/commit-workflow-fast.png">
+  </p>
+</div>
 
 ### Undoing changes
 ```console
@@ -133,25 +149,41 @@ $ git push <remote> <branch>
 ### Pull
 It’s an easy way to synchronize your local repository with upstream changes. The following diagram explains each step of the pulling process.
 
-![pull](images/pull.svg)
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/pull.svg">
+  </p>
+</div>
 
 #### No-Rebase vs Rebase
 
-![pull-scenario](images/pull-scenario.svg)
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/pull-scenario.svg">
+  </p>
+</div>
 
 ```console
 $ git pull <remote>
 ```
 The git pull command first runs git fetch which downloads content from the specified remote repository. Then a git merge is executed to merge the remote content refs and heads into a new local merge commit.
 
-![pull-default](images/pull-default.svg)
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/pull-default.svg">
+  </p>
+</div>
 
 ```console
 $ git pull --rebase <remote>
 ```
 In this diagram, we can now see that a rebase pull does not create the new H commit. Instead, the rebase has copied the remote commits A--B--C and appended them to the local origin/master commit history.
 
-![pull-rebase](images/pull-rebase.svg)
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/pull-rebase.svg">
+  </p>
+</div>
 
 ## Tagging, Branching and Merging
 ### Tagging
@@ -186,17 +218,29 @@ $ git checkout <branch>
 ### Merge
 Git merge will combine multiple sequences of commits into one unified history
 
-![merge-a](images/merge-a.png)![merge-b](images/merge-b.png)
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/merge-a.png"><img width="50%" height=auto src="./images/merge-b.png">
+  </p>
+</div>
 
 #### Fast Forward Merge
 A fast-forward merge can occur when there is a linear path from the current branch tip to the target branch. Instead of “actually” merging the branches, all Git has to do to integrate the histories is move (i.e., “fast forward”) the current branch tip up to the target branch tip.
 
-![merge-fast](images/merge-fast.svg)
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/merge-fast.svg">
+  </p>
+</div>
 
 #### 3-way merge
 When there is not a linear path to the target branch, Git has no choice but to combine them via a 3-way merge. 3-way merges use a dedicated commit to tie together the two histories.
 
-![merge-3-way](images/merge-3-way.svg)
+<div>
+  <p align="center">
+    <img width="50%" height=auto src="./images/merge-3-way.svg">
+  </p>
+</div>
 
 ### Conflicts
 Conflicts generally arise when two people have changed the same lines in a file, or if one developer deleted a file while another developer was modifying it. Git will mark the file as being conflicted and halt the merging process. It is then the developers' responsibility to resolve the conflict.
@@ -255,7 +299,11 @@ Apart from those two primary branches, there are other branches in the workflow:
 4. **Release**—This also derives from develop branch but is used during releases.
 5. **Hotfix**—This derives from the master branch and is used to fix a bug in the production branch that was identified after a release.
 
-![gitflow](images/gitflow.png)
+<div>
+  <p align="center">
+    <img width="75%" height=auto src="./images/gitflow.png">
+  </p>
+</div>
 
 ## Help
 * [What is an SSH KEY?](https://www.atlassian.com/git/tutorials/git-ssh)
