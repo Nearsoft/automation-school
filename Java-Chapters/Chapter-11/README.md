@@ -1,1 +1,1 @@
-# Chapter 10 - Exception Handling
+# Chapter 11 - Design Patterns

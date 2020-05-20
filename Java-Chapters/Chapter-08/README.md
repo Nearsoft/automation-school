@@ -1,1 +1,1 @@
-# Chapter 07 - A Closer Look at Methods and Classes
+# Chapter 08 - Inheritance
