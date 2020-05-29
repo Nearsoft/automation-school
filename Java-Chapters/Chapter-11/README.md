@@ -5,7 +5,20 @@
 **Definition:**
 Define a class that has only one instance and provides a global point of access to it
 
-**Implementation:**
+**Early Implementation:**
+```java
+public class Singleton {
+    private static Singleton instance = new Singleton();
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        return instance;
+    }
+}
+```
+
+**Lazy Implementation:**
 ```java
 public class Singleton {
     private static Singleton instance;
@@ -22,7 +35,7 @@ public class Singleton {
 }
 ```
 
-**Example:** [Singleton](https://github.com/AgueroMishel/singleton)
+**Exercise:** [singleton-exercise](https://github.com/AgueroNS/singleton-exercise)
 
 ## Factory
 
