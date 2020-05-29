@@ -35,8 +35,6 @@ public class Singleton {
 }
 ```
 
-**Example:** [singleton](https://github.com/AgueroMishel/singleton)
-
 **Exercise:** [singleton-exercise](https://github.com/AgueroNS/singleton-exercise)
 
 ## Factory
