@@ -649,34 +649,3 @@ We can see that we did not define the toString() or getMessage()  methods, they 
 in the following table we can see some methods inherited from Throwable class.
 
 ![throwable-methods-table.png](images/throwable-methods-table.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
