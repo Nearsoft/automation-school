@@ -1,8 +1,6 @@
 # QA Automation School
 Training program for QA Automation using Java with Selenium
 
-(TODO Introduction of the course and targeted audience) 
-
 ## Java Chapters
 1. [An Overview of Java](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-01)
 2. [Data Types, Variables, and Arrays](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-02)
@@ -17,7 +15,27 @@ Training program for QA Automation using Java with Selenium
 11. [Design Patterns](https://github.com/Nearsoft/automation-school/tree/master/Java-Chapters/Chapter-11)
 
 ## Automation Chapters
-Work in progress...
+1. [Selenium In A Nutshell](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-01-07)
+2. [Defining A Test Strategy](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-01-07)
+3. [Picking A Language](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-01-07)
+4. [A Programming Primer](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-01-07)
+5. [Anatomy Of A Good Acceptance Test](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-01-07)
+6. [Writing Your First Test](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-01-07)
+7. [Verifying Your Locators](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-01-07)
+8. [Writing Re-usable Test Code](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-08-09)
+9. [Writing Really Re-usable Test Code](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-08-09)
+10. [Writing Resilient Test Code](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-10)  
+11. [Prepping For Use](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-)
+12. [Running A Different Browser Locally](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-)
+13. [Running Browsers In The Cloud](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-)
+14. [Speeding Up Your Test Runs](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-)
+15. [Flexible Test Execution](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-)
+16. [Automating Your Test Runs](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-)
+17. [Finding Information On Your Own](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Chapter-)  
+18. Exercises
+    - [Exercise I - Start an Automation Project from scratch](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Exercises/Exercise-1)
+    - [Exercise II - Adding more tests](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Exercises/Exercise-1)
+    - [Exercise II - Strategy pattern](https://github.com/Nearsoft/automation-school/tree/master/Automation-Chapters/Exercises/Exercise-1)
 
 ## General References
 [Training Schedule](https://docs.google.com/spreadsheets/d/1OPPdPRM3FK0S1xqXxdGjRkXF7RHjl7KY2LUMjcHhdVs) - Document to keep track of the training schedules  
